@@ -1,0 +1,149 @@
+[
+  {
+    "id": "watch4",
+    "nome": "Samsung Galaxy Watch4 40 mm",
+    "preco": "R$ 460",
+    "resumo": "Preto, com caixa e carregador",
+    "descricao": "Smartwatch Samsung Galaxy Watch4 40 mm, versão Bluetooth (SM-R860), preto, com pulseira esportiva original.\nAcompanha caixa original e carregador.\nMarcas de uso leves, tudo funcionando.",
+    "fotos": [
+      "Samsung Galaxy smartwatch4/20261121_032349_700_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_703_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_699_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_702_foto.jpg"
+    ]
+  },
+  {
+    "id": "lava-e-seca",
+    "nome": "Lava e seca Samsung 13 kg",
+    "preco": "R$ 3.500",
+    "resumo": "Inox, 127 V, comprada em out/2024",
+    "descricao": "Lava e seca Samsung WD13T, 13 kg, 127 V, inox.\nComprada em outubro de 2024, funcionando.\nAcompanha manual e capa protetora.",
+    "fotos": [
+      "máquina de lavar Samsung/20261117_171900_37_foto.jpg",
+      "máquina de lavar Samsung/20261117_171900_38_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261117_224738_410_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261117_224738_412_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261117_224738_413_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261119_175118_489_foto.jpg"
+    ]
+  },
+  {
+    "id": "traxxas",
+    "nome": "Carro de controle remoto Traxxas Slash",
+    "preco": "R$ 1.700",
+    "resumo": "Escala 1/10, completo, com rádio",
+    "descricao": "Traxxas Slash 2WD, escala 1/10 (modelo 58034-1), pintura Hawaiian.\nCompleto, com rádio, baterias e carregador.\nPouquíssimo usado, funcionando.",
+    "fotos": [
+      "carrinho controle remoto Traxxas/20261117_193509_169_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_193509_168_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_193509_167_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_200431_180_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_200431_181_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_200431_182_foto.jpg"
+    ]
+  },
+  {
+    "id": "giz",
+    "nome": "Giz de calçada Crayola (48)",
+    "preco": "R$ 50",
+    "resumo": "Lavável, caixa com 48",
+    "descricao": "Giz de calçada Crayola Washable Sidewalk Chalk, lavável, caixa com 48 gizes coloridos.",
+    "fotos": [
+      "caixa de giz/20261117_202022_281_foto.jpg",
+      "caixa de giz/20261117_202022_279_foto.jpg",
+      "caixa de giz/20261117_202022_280_foto.jpg"
+    ]
+  },
+  {
+    "id": "lumix",
+    "nome": "Câmera Panasonic Lumix DMC-LZ6",
+    "preco": "R$ 340",
+    "resumo": "Zoom óptico 6x, funcionando",
+    "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, zoom óptico 6x, com alça.\nFunciona com pilhas AA. Testada, funcionando.\nNão acompanha cabo.",
+    "fotos": [
+      "câmera antiga/20261117_202138_294_foto.jpg",
+      "câmera antiga/20261117_202138_295_foto.jpg",
+      "câmera antiga/20261117_202138_293_foto.jpg",
+      "câmera antiga/20261117_202138_292_foto.jpg"
+    ]
+  },
+  {
+    "id": "zippos",
+    "nome": "Isqueiros Zippo (2)",
+    "preco": "R$ 220 cada",
+    "resumo": "Originais, Made in USA, na caixa",
+    "descricao": "Dois isqueiros Zippo originais, Made in USA, cada um na caixa: \"Serenity Prayer\" e \"Human Being\".\nVazios, sem fluido.\nR$ 220 cada, ou os dois por R$ 400.",
+    "fotos": [
+      "isqueiros Zippo/grupo_zippos_colagem.jpg",
+      "isqueiros Zippo/20261117_202406_308_foto.jpg",
+      "isqueiros Zippo/20261117_202406_313_foto.jpg",
+      "isqueiros Zippo/20261117_202406_309_foto.jpg",
+      "isqueiros Zippo/20261117_202406_317_foto.jpg"
+    ],
+    "capa": "isqueiros Zippo/20261117_202406_311_foto.jpg"
+  },
+  {
+    "id": "luva",
+    "nome": "Luva de beisebol Rawlings 13\"",
+    "preco": "R$ 220",
+    "resumo": "Modelo RSB130GB",
+    "descricao": "Luva de beisebol Rawlings RSB130GB, 13 polegadas.",
+    "fotos": [
+      "luve de beiseball/20261117_200658_196_foto.jpg",
+      "luve de beiseball/20261117_200658_195_foto.jpg"
+    ]
+  },
+  {
+    "id": "ssd",
+    "nome": "SSD WD NVMe 128 GB M.2 2230",
+    "preco": "R$ 160",
+    "resumo": "Formato pequeno (2230)",
+    "descricao": "SSD Western Digital PC SN520 NVMe, 128 GB, formato M.2 2230 (o modelo curto, usado em notebooks finos, Surface e Steam Deck).",
+    "fotos": [
+      "Ssd nvme 128GB/20261119_181236_530_foto.jpg",
+      "Ssd nvme 128GB/20261119_181236_528_foto.jpg",
+      "Ssd nvme 128GB/20261119_181236_529_foto.jpg"
+    ]
+  },
+  {
+    "id": "cabo",
+    "nome": "Cabo de rede/CFTV Sumay",
+    "preco": "R$ 120",
+    "resumo": "Caixa de 305 m, aberta",
+    "descricao": "Cabo Sumay para CFTV e rede, 4 pares, 24 AWG, CCA (cobre revestido de alumínio).\nCaixa de 305 m aberta; a metragem restante não foi medida.",
+    "fotos": [
+      "Cabo internet/20261121_175051_725_foto.jpg",
+      "Cabo internet/20261121_175051_728_foto.jpg",
+      "Cabo internet/20261121_175051_727_foto.jpg",
+      "Cabo internet/20261121_175051_726_foto.jpg"
+    ]
+  },
+  {
+    "id": "pratos",
+    "nome": "Pratos de coleção Franklin Mint (6)",
+    "preco": "R$ 70 cada",
+    "resumo": "Porcelana, edição limitada",
+    "descricao": "Pratos decorativos de porcelana Franklin Mint, edição limitada numerada, borda dourada, para pendurar na parede.\nArte indígena norte-americana de Hermon Adams, Paul Calle e Gary Ampel.\nR$ 70 cada, ou os 6 por R$ 380.\nO de fundo azul, com lobos, tem um pequeno lascado na borda: esse sai por R$ 30.",
+    "fotos": [
+      "Pratos arte indígena/grupo_pratos_colagem.jpg",
+      "Pratos arte indígena/20261120_014519_570_foto.jpg",
+      "Pratos arte indígena/20261120_014519_572_foto.jpg",
+      "Pratos arte indígena/20261120_014519_574_foto.jpg",
+      "Pratos arte indígena/20261120_014519_579_foto.jpg",
+      "Pratos arte indígena/20261120_014520_581_foto.jpg",
+      "Pratos arte indígena/20261120_014519_573_foto.jpg",
+      "Pratos arte indígena/20261120_014519_575_foto.jpg"
+    ]
+  },
+  {
+    "id": "saleiros",
+    "nome": "Saleiros de vidro (kit com 6)",
+    "preco": "R$ 50",
+    "resumo": "Formato de lâmpada, sem uso",
+    "descricao": "Saleiros de vidro em formato de lâmpada, tampa de metal de rosca. Sem uso, com a etiqueta da loja.\nKit com 6. Tenho vários kits.",
+    "fotos": [
+      "saleiros/20261117_201644_262_foto.jpg",
+      "saleiros/20261117_201644_263_foto.jpg"
+    ]
+  }
+]

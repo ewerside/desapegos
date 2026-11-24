@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desapegos</title>
+<meta name="description" content="Itens à venda. Toque em um item para ver as fotos e os detalhes.">
+<meta property="og:title" content="Desapegos">
+<meta property="og:description" content="Itens à venda. Toque em um item para ver as fotos e os detalhes.">
+<meta property="og:image" content="https://ewerside.github.io/desapegos/fotos/watch4-capa.jpg">
+<style>
+  :root { --fundo:#f6f4f0; --card:#fff; --texto:#1d1d1b; --suave:#6b6a66; --destaque:#1f6f5c; --borda:#e4e1da; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fundo); color:var(--texto); }
+  header { padding:28px 20px 8px; max-width:1100px; margin:0 auto; }
+  h1 { margin:0 0 6px; font-size:28px; letter-spacing:-.5px; }
+  header p { margin:0; color:var(--suave); font-size:15px; line-height:1.45; }
+  main { max-width:1100px; margin:0 auto; padding:16px 14px 40px; display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
+  @media (min-width:700px){ main { grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:18px; } }
+  .card { all:unset; cursor:pointer; background:var(--card); border:1px solid var(--borda); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
+  .card:hover, .card:focus-visible { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.08); }
+  .card:focus-visible { outline:2px solid var(--destaque); }
+  .card img { width:100%; aspect-ratio:1; object-fit:cover; background:#eee; display:block; }
+  .info { padding:10px 12px 12px; display:flex; flex-direction:column; gap:3px; }
+  .nome { font-weight:600; font-size:15px; line-height:1.25; }
+  .resumo { color:var(--suave); font-size:13px; line-height:1.3; }
+  .preco { color:var(--destaque); font-weight:700; font-size:17px; margin-top:4px; }
+  footer { text-align:center; color:var(--suave); font-size:14px; padding:0 20px 36px; }
+  dialog { border:none; padding:0; width:min(760px,100vw); max-height:100dvh; border-radius:16px; background:var(--card); color:var(--texto); }
+  @media (max-width:700px){ dialog { width:100vw; height:100dvh; max-width:none; max-height:none; margin:0; border-radius:0; } }
+  dialog::backdrop { background:rgba(20,20,20,.6); }
+  .topo { display:flex; justify-content:space-between; align-items:center; padding:10px 12px; position:sticky; top:0; background:var(--card); z-index:2; border-bottom:1px solid var(--borda); }
+  .fechar { all:unset; cursor:pointer; font-size:15px; padding:8px 12px; border-radius:8px; background:var(--fundo); }
+  .galeria { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; background:#111; }
+  .galeria img { flex:0 0 100%; width:100%; max-height:70dvh; object-fit:contain; scroll-snap-align:center; }
+  .contador { text-align:center; color:var(--suave); font-size:13px; padding:8px 0 0; }
+  .detalhe { padding:12px 18px 26px; }
+  .detalhe h2 { margin:6px 0 4px; font-size:21px; }
+  .detalhe .preco { font-size:22px; }
+  .detalhe p { line-height:1.55; margin:10px 0 0; white-space:pre-line; }
+  .setas { display:flex; justify-content:center; gap:10px; padding-top:8px; }
+  .setas button { all:unset; cursor:pointer; padding:6px 14px; border:1px solid var(--borda); border-radius:8px; font-size:14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Desapegos</h1>
+  <p>Toque em um item para ver as fotos e os detalhes. Para comprar, é só me chamar no WhatsApp.</p>
+</header>
+<main>
+{{CARDS}}
+</main>
+<footer>{{TOTAL}} itens disponíveis</footer>
+
+<dialog id="janela" aria-label="Detalhes do item">
+  <div class="topo"><strong id="j-titulo"></strong><button class="fechar" id="fechar">Fechar</button></div>
+  <div class="galeria" id="galeria"></div>
+  <div class="contador" id="contador"></div>
+  <div class="setas"><button id="ant" aria-label="Foto anterior">‹ Anterior</button><button id="prox" aria-label="Próxima foto">Próxima ›</button></div>
+  <div class="detalhe"><h2 id="j-nome"></h2><div class="preco" id="j-preco"></div><p id="j-desc"></p></div>
+</dialog>
+
+<script>
+const DADOS = {{DADOS}};
+const janela = document.getElementById('janela');
+const galeria = document.getElementById('galeria');
+const contador = document.getElementById('contador');
+let total = 0;
+function atualizaContador() {
+  const i = Math.round(galeria.scrollLeft / Math.max(galeria.clientWidth, 1));
+  contador.textContent = total > 1 ? `Foto ${i + 1} de ${total}` : '';
+}
+function abrir(id) {
+  const d = DADOS[id]; if (!d) return;
+  document.getElementById('j-titulo').textContent = d.preco;
+  document.getElementById('j-nome').textContent = d.nome;
+  document.getElementById('j-preco').textContent = d.preco;
+  document.getElementById('j-desc').textContent = d.descricao;
+  galeria.innerHTML = '';
+  d.arquivos.forEach((a, i) => {
+    const img = document.createElement('img');
+    img.src = 'fotos/' + a; img.alt = d.nome + ' (foto ' + (i + 1) + ')';
+    if (i > 0) img.loading = 'lazy';
+    galeria.appendChild(img);
+  });
+  total = d.arquivos.length;
+  document.querySelector('.setas').style.display = total > 1 ? 'flex' : 'none';
+  janela.showModal(); galeria.scrollLeft = 0; atualizaContador();
+  try { history.replaceState(null, '', '#' + id); } catch (e) {}
+}
+function fechar() { janela.close(); }
+janela.addEventListener('close', () => { try { history.replaceState(null, '', location.pathname); } catch (e) {} });
+document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => abrir(c.dataset.id)));
+document.getElementById('fechar').addEventListener('click', fechar);
+janela.addEventListener('click', e => { if (e.target === janela) fechar(); });
+galeria.addEventListener('scroll', atualizaContador, { passive: true });
+document.getElementById('ant').addEventListener('click', () => galeria.scrollBy({ left: -galeria.clientWidth, behavior: 'smooth' }));
+document.getElementById('prox').addEventListener('click', () => galeria.scrollBy({ left: galeria.clientWidth, behavior: 'smooth' }));
+if (location.hash && DADOS[location.hash.slice(1)]) abrir(location.hash.slice(1));
+</script>
+</body>
+</html>
