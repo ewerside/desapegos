@@ -3,109 +3,205 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Desapegos</title>
-<meta name="description" content="Itens à venda. Toque em um item para ver as fotos e os detalhes.">
-<meta property="og:title" content="Desapegos">
-<meta property="og:description" content="Itens à venda. Toque em um item para ver as fotos e os detalhes.">
-<meta property="og:image" content="https://ewerside.github.io/desapegos/fotos/watch4-capa.jpg">
+<title>Desapegos do vizinho</title>
+<meta name="description" content="Coisas à venda de um vizinho. Veja as fotos e os preços.">
+<meta property="og:title" content="Desapegos do vizinho">
+<meta property="og:description" content="Coisas à venda de um vizinho. Veja as fotos e os preços.">
+<meta property="og:image" content="https://ewerside.github.io/desapegos/fotos/watch4-1-m.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --fundo:#f6f4f0; --card:#fff; --texto:#1d1d1b; --suave:#6b6a66; --destaque:#1f6f5c; --borda:#e4e1da; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fundo); color:var(--texto); }
-  header { padding:28px 20px 8px; max-width:1100px; margin:0 auto; }
-  h1 { margin:0 0 6px; font-size:28px; letter-spacing:-.5px; }
-  header p { margin:0; color:var(--suave); font-size:15px; line-height:1.45; }
-  main { max-width:1100px; margin:0 auto; padding:16px 14px 40px; display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
-  @media (min-width:700px){ main { grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:18px; } }
-  .card { all:unset; cursor:pointer; background:var(--card); border:1px solid var(--borda); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
-  .card:hover, .card:focus-visible { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.08); }
-  .card:focus-visible { outline:2px solid var(--destaque); }
-  .card img { width:100%; aspect-ratio:1; object-fit:cover; background:#eee; display:block; }
-  .info { padding:10px 12px 12px; display:flex; flex-direction:column; gap:3px; }
-  .nome { font-weight:600; font-size:15px; line-height:1.25; }
-  .resumo { color:var(--suave); font-size:13px; line-height:1.3; }
-  .preco { color:var(--destaque); font-weight:700; font-size:17px; margin-top:4px; }
-  footer { text-align:center; color:var(--suave); font-size:14px; padding:0 20px 36px; }
-  dialog { border:none; padding:0; width:min(760px,100vw); max-height:100dvh; border-radius:16px; background:var(--card); color:var(--texto); }
-  @media (max-width:700px){ dialog { width:100vw; height:100dvh; max-width:none; max-height:none; margin:0; border-radius:0; } }
-  dialog::backdrop { background:rgba(20,20,20,.6); }
-  .topo { display:flex; justify-content:space-between; align-items:center; padding:10px 12px; position:sticky; top:0; background:var(--card); z-index:2; border-bottom:1px solid var(--borda); }
-  .fechar { all:unset; cursor:pointer; font-size:15px; padding:8px 12px; border-radius:8px; background:var(--fundo); }
-  .galeria { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; background:#111; }
-  .galeria img { flex:0 0 100%; width:100%; max-height:70dvh; object-fit:contain; scroll-snap-align:center; }
-  .contador { text-align:center; color:var(--suave); font-size:13px; padding:8px 0 0; }
-  .detalhe { padding:12px 18px 26px; }
-  .detalhe h2 { margin:6px 0 4px; font-size:21px; }
-  .detalhe .preco { font-size:22px; }
-  .detalhe p { line-height:1.55; margin:10px 0 0; white-space:pre-line; }
-  .setas { display:flex; justify-content:center; gap:10px; padding-top:8px; }
-  .setas button { all:unset; cursor:pointer; padding:6px 14px; border:1px solid var(--borda); border-radius:8px; font-size:14px; }
+  :root {
+    --parede: #dfe7da;
+    --papel: #fffef8;
+    --tinta: #22324d;
+    --tinta-suave: #5d6b63;
+    --fita: rgba(240, 205, 96, .78);
+    --janela: #f2c94c;
+    --mao: "Shantell Sans", "Comic Neue", cursive;
+    --texto: "Figtree", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--tinta); font-family: var(--texto); font-size: 16px; line-height: 1.5;
+    background-color: var(--parede);
+    background-image: radial-gradient(rgba(34, 50, 77, .06) 1px, transparent 1.4px);
+    background-size: 14px 14px;
+  }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; }
+
+  header { max-width: 1080px; margin: 0 auto; padding: 32px 20px 8px; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items: end; }
+  header svg { grid-row: span 2; width: 92px; height: auto; }
+  h1 { font-family: var(--mao); font-weight: 700; font-size: clamp(30px, 6vw, 44px); line-height: 1.05; margin: 0; letter-spacing: -.5px; }
+  header p { margin: 0; color: var(--tinta-suave); max-width: 46ch; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 26px 16px 24px; display: grid; gap: 30px 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); }
+
+  .nota { position: relative; background: var(--papel); padding: 12px 12px 14px; transform: rotate(var(--giro)); box-shadow: 0 1px 1px rgba(34, 50, 77, .12), 0 14px 18px -14px rgba(34, 50, 77, .45); }
+  .nota::before { content: ""; position: absolute; top: -11px; left: 50%; width: 96px; height: 24px; transform: translateX(-50%) rotate(-3deg); background: var(--fita); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25); z-index: 2; }
+  .nota:nth-child(3n)::before { transform: translateX(-50%) rotate(4deg); width: 84px; }
+  .nota:nth-child(4n+1)::before { background: rgba(160, 200, 220, .75); }
+
+  .carrossel { position: relative; overflow: hidden; background: #eef0ea; aspect-ratio: 1; touch-action: pan-y; user-select: none; }
+  .trilho { display: flex; height: 100%; transition: transform .3s ease; }
+  .trilho img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+  .seta { position: absolute; top: 50%; width: 38px; height: 38px; margin-top: -19px; border: none; border-radius: 50%; background: rgba(255, 254, 248, .92); cursor: pointer; z-index: 1; box-shadow: 0 1px 3px rgba(34, 50, 77, .3); }
+  .seta::after { content: ""; position: absolute; top: 50%; left: 50%; width: 9px; height: 9px; border-top: 2.5px solid var(--tinta); border-right: 2.5px solid var(--tinta); }
+  .seta.ant { left: 8px; } .seta.ant::after { transform: translate(-35%, -50%) rotate(-135deg); }
+  .seta.prox { right: 8px; } .seta.prox::after { transform: translate(-65%, -50%) rotate(45deg); }
+  .seta[hidden] { display: none; }
+  .pontos { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px; pointer-events: none; }
+  .pontos i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 254, 248, .6); box-shadow: 0 0 0 1px rgba(34, 50, 77, .25); }
+  .pontos i.ativo { background: var(--papel); transform: scale(1.25); }
+
+  .texto { padding: 12px 4px 0; }
+  .texto h2 { font-size: 18px; line-height: 1.25; margin: 0; font-weight: 600; }
+  .texto p { margin: 3px 0 0; color: var(--tinta-suave); font-size: 14.5px; line-height: 1.4; }
+  .rodape { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
+  .preco { font-family: var(--mao); font-weight: 700; font-size: 23px; line-height: 1; }
+  .ver { border: 1.5px solid var(--tinta); background: none; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .ver:hover { background: var(--tinta); color: var(--papel); }
+
+  footer { text-align: center; color: var(--tinta-suave); font-size: 14px; padding: 10px 20px 44px; }
+
+  dialog { border: none; padding: 0; width: min(720px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); background: var(--papel); color: var(--tinta); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .5); }
+  dialog::backdrop { background: rgba(34, 50, 77, .55); }
+  @media (max-width: 640px) { dialog { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; } }
+  .janela-topo { display: flex; justify-content: flex-end; padding: 10px 10px 0; }
+  .fechar { border: none; background: none; cursor: pointer; font-weight: 600; padding: 8px 10px; font-size: 15px; }
+  .janela-corpo { padding: 0 18px 26px; }
+  dialog .carrossel { aspect-ratio: 4 / 3; background: #f0f1ec; }
+  dialog .trilho img { object-fit: contain; }
+  .contador { text-align: center; color: var(--tinta-suave); font-size: 13px; margin-top: 6px; }
+  dialog h2 { font-size: 22px; line-height: 1.25; margin: 14px 0 4px; }
+  dialog .preco { font-size: 28px; }
+  .descricao { white-space: pre-line; margin: 14px 0 0; max-width: 62ch; }
+  .aviso { margin: 20px 0 0; padding-top: 14px; border-top: 1.5px dashed rgba(34, 50, 77, .25); font-family: var(--mao); font-size: 17px; }
+
+  @media (prefers-reduced-motion: reduce) { .trilho { transition: none; } }
 </style>
 </head>
 <body>
 <header>
-  <h1>Desapegos</h1>
-  <p>Toque em um item para ver as fotos e os detalhes. Para comprar, é só me chamar no WhatsApp.</p>
+  <svg viewBox="0 0 92 72" role="img" aria-label="Prédios">
+    <g fill="none" stroke="#22324d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M4 70h84"/>
+      <path d="M10 70V30h22v40"/>
+      <path d="M36 70V8h22v62"/>
+      <path d="M62 70V38h22v32"/>
+      <path d="M43 70v-9h8v9"/>
+    </g>
+    <g fill="#22324d" opacity=".75">
+      <rect x="15" y="36" width="5" height="6" rx="1"/><rect x="23" y="36" width="5" height="6" rx="1"/>
+      <rect x="15" y="48" width="5" height="6" rx="1"/><rect x="23" y="48" width="5" height="6" rx="1"/>
+      <rect x="41" y="15" width="5" height="6" rx="1"/><rect x="49" y="15" width="5" height="6" rx="1"/>
+      <rect x="41" y="27" width="5" height="6" rx="1"/>
+      <rect x="41" y="39" width="5" height="6" rx="1"/><rect x="49" y="39" width="5" height="6" rx="1"/>
+      <rect x="67" y="44" width="5" height="6" rx="1"/><rect x="75" y="44" width="5" height="6" rx="1"/>
+      <rect x="67" y="56" width="5" height="6" rx="1"/>
+    </g>
+    <rect x="49" y="27" width="5" height="6" rx="1" fill="#f2c94c"/>
+    <rect x="75" y="56" width="5" height="6" rx="1" fill="#f2c94c"/>
+  </svg>
+  <h1>Desapegos do vizinho</h1>
+  <p>Coisas que estou vendendo. Toque nas setas para ver mais fotos e em "Ver detalhes" para ler sobre cada uma.</p>
 </header>
-<main>
-<button class="card" data-id="watch4"><img src="fotos/watch4-capa.jpg" alt="Samsung Galaxy Watch4 40 mm" loading="lazy"><span class="info"><span class="nome">Samsung Galaxy Watch4 40 mm</span><span class="resumo">Preto, com caixa e carregador</span><span class="preco">R$ 460</span></span></button>
-<button class="card" data-id="lava-e-seca"><img src="fotos/lava-e-seca-capa.jpg" alt="Lava e seca Samsung 13 kg" loading="lazy"><span class="info"><span class="nome">Lava e seca Samsung 13 kg</span><span class="resumo">Inox, 127 V, comprada em out/2024</span><span class="preco">R$ 3.500</span></span></button>
-<button class="card" data-id="traxxas"><img src="fotos/traxxas-capa.jpg" alt="Carro de controle remoto Traxxas Slash" loading="lazy"><span class="info"><span class="nome">Carro de controle remoto Traxxas Slash</span><span class="resumo">Escala 1/10, completo, com rádio</span><span class="preco">R$ 1.700</span></span></button>
-<button class="card" data-id="giz"><img src="fotos/giz-capa.jpg" alt="Giz de calçada Crayola (48)" loading="lazy"><span class="info"><span class="nome">Giz de calçada Crayola (48)</span><span class="resumo">Lavável, caixa com 48</span><span class="preco">R$ 50</span></span></button>
-<button class="card" data-id="lumix"><img src="fotos/lumix-capa.jpg" alt="Câmera Panasonic Lumix DMC-LZ6" loading="lazy"><span class="info"><span class="nome">Câmera Panasonic Lumix DMC-LZ6</span><span class="resumo">Zoom óptico 6x, funcionando</span><span class="preco">R$ 340</span></span></button>
-<button class="card" data-id="zippos"><img src="fotos/zippos-capa.jpg" alt="Isqueiros Zippo (2)" loading="lazy"><span class="info"><span class="nome">Isqueiros Zippo (2)</span><span class="resumo">Originais, Made in USA, na caixa</span><span class="preco">R$ 220 cada</span></span></button>
-<button class="card" data-id="luva"><img src="fotos/luva-capa.jpg" alt="Luva de beisebol Rawlings 13&quot;" loading="lazy"><span class="info"><span class="nome">Luva de beisebol Rawlings 13&quot;</span><span class="resumo">Modelo RSB130GB</span><span class="preco">R$ 220</span></span></button>
-<button class="card" data-id="ssd"><img src="fotos/ssd-capa.jpg" alt="SSD WD NVMe 128 GB M.2 2230" loading="lazy"><span class="info"><span class="nome">SSD WD NVMe 128 GB M.2 2230</span><span class="resumo">Formato pequeno (2230)</span><span class="preco">R$ 160</span></span></button>
-<button class="card" data-id="cabo"><img src="fotos/cabo-capa.jpg" alt="Cabo de rede/CFTV Sumay" loading="lazy"><span class="info"><span class="nome">Cabo de rede/CFTV Sumay</span><span class="resumo">Caixa de 305 m, aberta</span><span class="preco">R$ 120</span></span></button>
-<button class="card" data-id="pratos"><img src="fotos/pratos-capa.jpg" alt="Pratos de coleção Franklin Mint (6)" loading="lazy"><span class="info"><span class="nome">Pratos de coleção Franklin Mint (6)</span><span class="resumo">Porcelana, edição limitada</span><span class="preco">R$ 70 cada</span></span></button>
-<button class="card" data-id="saleiros"><img src="fotos/saleiros-capa.jpg" alt="Saleiros de vidro (kit com 6)" loading="lazy"><span class="info"><span class="nome">Saleiros de vidro (kit com 6)</span><span class="resumo">Formato de lâmpada, sem uso</span><span class="preco">R$ 50</span></span></button>
-</main>
-<footer>11 itens disponíveis</footer>
 
-<dialog id="janela" aria-label="Detalhes do item">
-  <div class="topo"><strong id="j-titulo"></strong><button class="fechar" id="fechar">Fechar</button></div>
-  <div class="galeria" id="galeria"></div>
-  <div class="contador" id="contador"></div>
-  <div class="setas"><button id="ant" aria-label="Foto anterior">‹ Anterior</button><button id="prox" aria-label="Próxima foto">Próxima ›</button></div>
-  <div class="detalhe"><h2 id="j-nome"></h2><div class="preco" id="j-preco"></div><p id="j-desc"></p></div>
+<main>
+<article class="nota" style="--giro:-1.2deg" data-id="watch4"><div class="carrossel" data-total="4"><div class="trilho"><img src="fotos/watch4-1-m.jpg" alt="Smartwatch Samsung Galaxy Watch4, foto 1 de 4" draggable="false"><img src="fotos/watch4-2-m.jpg" alt="Smartwatch Samsung Galaxy Watch4, foto 2 de 4" loading="lazy" draggable="false"><img src="fotos/watch4-3-m.jpg" alt="Smartwatch Samsung Galaxy Watch4, foto 3 de 4" loading="lazy" draggable="false"><img src="fotos/watch4-4-m.jpg" alt="Smartwatch Samsung Galaxy Watch4, foto 4 de 4" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Smartwatch Samsung Galaxy Watch4</h2><p>40 mm, preto, com caixa e carregador</p><div class="rodape"><span class="preco">R$ 460</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:0.9deg" data-id="lava-e-seca"><div class="carrossel" data-total="6"><div class="trilho"><img src="fotos/lava-e-seca-1-m.jpg" alt="Lava e seca Samsung 13 kg, foto 1 de 6" draggable="false"><img src="fotos/lava-e-seca-2-m.jpg" alt="Lava e seca Samsung 13 kg, foto 2 de 6" loading="lazy" draggable="false"><img src="fotos/lava-e-seca-3-m.jpg" alt="Lava e seca Samsung 13 kg, foto 3 de 6" loading="lazy" draggable="false"><img src="fotos/lava-e-seca-4-m.jpg" alt="Lava e seca Samsung 13 kg, foto 4 de 6" loading="lazy" draggable="false"><img src="fotos/lava-e-seca-5-m.jpg" alt="Lava e seca Samsung 13 kg, foto 5 de 6" loading="lazy" draggable="false"><img src="fotos/lava-e-seca-6-m.jpg" alt="Lava e seca Samsung 13 kg, foto 6 de 6" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Lava e seca Samsung 13 kg</h2><p>Inox, 127 V, comprada em outubro de 2024</p><div class="rodape"><span class="preco">R$ 3.500</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:-0.4deg" data-id="traxxas"><div class="carrossel" data-total="6"><div class="trilho"><img src="fotos/traxxas-1-m.jpg" alt="Carro de controle remoto Traxxas, foto 1 de 6" draggable="false"><img src="fotos/traxxas-2-m.jpg" alt="Carro de controle remoto Traxxas, foto 2 de 6" loading="lazy" draggable="false"><img src="fotos/traxxas-3-m.jpg" alt="Carro de controle remoto Traxxas, foto 3 de 6" loading="lazy" draggable="false"><img src="fotos/traxxas-4-m.jpg" alt="Carro de controle remoto Traxxas, foto 4 de 6" loading="lazy" draggable="false"><img src="fotos/traxxas-5-m.jpg" alt="Carro de controle remoto Traxxas, foto 5 de 6" loading="lazy" draggable="false"><img src="fotos/traxxas-6-m.jpg" alt="Carro de controle remoto Traxxas, foto 6 de 6" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Carro de controle remoto Traxxas</h2><p>Elétrico, grande (escala 1/10), completo</p><div class="rodape"><span class="preco">R$ 1.700</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:1.3deg" data-id="giz"><div class="carrossel" data-total="3"><div class="trilho"><img src="fotos/giz-1-m.jpg" alt="Giz de calçada Crayola, foto 1 de 3" draggable="false"><img src="fotos/giz-2-m.jpg" alt="Giz de calçada Crayola, foto 2 de 3" loading="lazy" draggable="false"><img src="fotos/giz-3-m.jpg" alt="Giz de calçada Crayola, foto 3 de 3" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Giz de calçada Crayola</h2><p>Caixa com 48 gizes laváveis</p><div class="rodape"><span class="preco">R$ 50</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:-0.8deg" data-id="lumix"><div class="carrossel" data-total="4"><div class="trilho"><img src="fotos/lumix-1-m.jpg" alt="Câmera digital Panasonic Lumix, foto 1 de 4" draggable="false"><img src="fotos/lumix-2-m.jpg" alt="Câmera digital Panasonic Lumix, foto 2 de 4" loading="lazy" draggable="false"><img src="fotos/lumix-3-m.jpg" alt="Câmera digital Panasonic Lumix, foto 3 de 4" loading="lazy" draggable="false"><img src="fotos/lumix-4-m.jpg" alt="Câmera digital Panasonic Lumix, foto 4 de 4" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Câmera digital Panasonic Lumix</h2><p>Modelo LZ6, zoom de 6x, funcionando</p><div class="rodape"><span class="preco">R$ 340</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:0.5deg" data-id="zippo-serenity"><div class="carrossel" data-total="5"><div class="trilho"><img src="fotos/zippo-serenity-1-m.jpg" alt="Isqueiro Zippo Serenity Prayer, foto 1 de 5" draggable="false"><img src="fotos/zippo-serenity-2-m.jpg" alt="Isqueiro Zippo Serenity Prayer, foto 2 de 5" loading="lazy" draggable="false"><img src="fotos/zippo-serenity-3-m.jpg" alt="Isqueiro Zippo Serenity Prayer, foto 3 de 5" loading="lazy" draggable="false"><img src="fotos/zippo-serenity-4-m.jpg" alt="Isqueiro Zippo Serenity Prayer, foto 4 de 5" loading="lazy" draggable="false"><img src="fotos/zippo-serenity-5-m.jpg" alt="Isqueiro Zippo Serenity Prayer, foto 5 de 5" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Isqueiro Zippo Serenity Prayer</h2><p>Original, Made in USA, na caixa</p><div class="rodape"><span class="preco">R$ 220</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:-1.2deg" data-id="zippo-human"><div class="carrossel" data-total="4"><div class="trilho"><img src="fotos/zippo-human-1-m.jpg" alt="Isqueiro Zippo Human Being, foto 1 de 4" draggable="false"><img src="fotos/zippo-human-2-m.jpg" alt="Isqueiro Zippo Human Being, foto 2 de 4" loading="lazy" draggable="false"><img src="fotos/zippo-human-3-m.jpg" alt="Isqueiro Zippo Human Being, foto 3 de 4" loading="lazy" draggable="false"><img src="fotos/zippo-human-4-m.jpg" alt="Isqueiro Zippo Human Being, foto 4 de 4" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Isqueiro Zippo Human Being</h2><p>Original, Made in USA, na caixa</p><div class="rodape"><span class="preco">R$ 220</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:0.9deg" data-id="cabo"><div class="carrossel" data-total="4"><div class="trilho"><img src="fotos/cabo-1-m.jpg" alt="Cabo de rede para internet, foto 1 de 4" draggable="false"><img src="fotos/cabo-2-m.jpg" alt="Cabo de rede para internet, foto 2 de 4" loading="lazy" draggable="false"><img src="fotos/cabo-3-m.jpg" alt="Cabo de rede para internet, foto 3 de 4" loading="lazy" draggable="false"><img src="fotos/cabo-4-m.jpg" alt="Cabo de rede para internet, foto 4 de 4" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Cabo de rede para internet</h2><p>Caixa de 305 m já aberta, sobra bastante</p><div class="rodape"><span class="preco">R$ 120</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:-0.4deg" data-id="luva"><div class="carrossel" data-total="2"><div class="trilho"><img src="fotos/luva-1-m.jpg" alt="Luva de beisebol Rawlings, foto 1 de 2" draggable="false"><img src="fotos/luva-2-m.jpg" alt="Luva de beisebol Rawlings, foto 2 de 2" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Luva de beisebol Rawlings</h2><p>Tamanho adulto, 13 polegadas</p><div class="rodape"><span class="preco">R$ 220</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:1.3deg" data-id="ssd"><div class="carrossel" data-total="3"><div class="trilho"><img src="fotos/ssd-1-m.jpg" alt="SSD de 128 GB para notebook ou Steam Deck, foto 1 de 3" draggable="false"><img src="fotos/ssd-2-m.jpg" alt="SSD de 128 GB para notebook ou Steam Deck, foto 2 de 3" loading="lazy" draggable="false"><img src="fotos/ssd-3-m.jpg" alt="SSD de 128 GB para notebook ou Steam Deck, foto 3 de 3" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>SSD de 128 GB para notebook ou Steam Deck</h2><p>Western Digital, formato pequeno M.2 2230</p><div class="rodape"><span class="preco">R$ 160</span><button class="ver">Ver detalhes</button></div></div></article>
+<article class="nota" style="--giro:-0.8deg" data-id="pratos"><div class="carrossel" data-total="8"><div class="trilho"><img src="fotos/pratos-1-m.jpg" alt="Pratos de coleção Franklin Mint, foto 1 de 8" draggable="false"><img src="fotos/pratos-2-m.jpg" alt="Pratos de coleção Franklin Mint, foto 2 de 8" loading="lazy" draggable="false"><img src="fotos/pratos-3-m.jpg" alt="Pratos de coleção Franklin Mint, foto 3 de 8" loading="lazy" draggable="false"><img src="fotos/pratos-4-m.jpg" alt="Pratos de coleção Franklin Mint, foto 4 de 8" loading="lazy" draggable="false"><img src="fotos/pratos-5-m.jpg" alt="Pratos de coleção Franklin Mint, foto 5 de 8" loading="lazy" draggable="false"><img src="fotos/pratos-6-m.jpg" alt="Pratos de coleção Franklin Mint, foto 6 de 8" loading="lazy" draggable="false"><img src="fotos/pratos-7-m.jpg" alt="Pratos de coleção Franklin Mint, foto 7 de 8" loading="lazy" draggable="false"><img src="fotos/pratos-8-m.jpg" alt="Pratos de coleção Franklin Mint, foto 8 de 8" loading="lazy" draggable="false"></div><button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button><div class="pontos"></div></div><div class="texto"><h2>Pratos de coleção Franklin Mint</h2><p>Porcelana pintada, para pendurar na parede</p><div class="rodape"><span class="preco">R$ 70 cada</span><button class="ver">Ver detalhes</button></div></div></article>
+</main>
+
+<footer>Gostou de algo? Me chame no WhatsApp.</footer>
+
+<dialog id="janela" aria-labelledby="j-nome">
+  <div class="janela-topo"><button class="fechar" id="fechar">Fechar</button></div>
+  <div class="janela-corpo">
+    <div class="carrossel" id="j-carrossel">
+      <button class="seta ant" aria-label="Foto anterior"></button>
+      <button class="seta prox" aria-label="Próxima foto"></button>
+    </div>
+    <div class="contador" id="j-contador" aria-live="polite"></div>
+    <h2 id="j-nome"></h2>
+    <div class="preco" id="j-preco"></div>
+    <p class="descricao" id="j-desc"></p>
+    <p class="aviso">Para comprar ou tirar dúvidas, é só me chamar no WhatsApp.</p>
+  </div>
 </dialog>
 
 <script>
-const DADOS = {"watch4": {"nome": "Samsung Galaxy Watch4 40 mm", "preco": "R$ 460", "descricao": "Smartwatch Samsung Galaxy Watch4 40 mm, versão Bluetooth (SM-R860), preto, com pulseira esportiva original.\nAcompanha caixa original e carregador.\nMarcas de uso leves, tudo funcionando.", "arquivos": ["watch4-1.jpg", "watch4-2.jpg", "watch4-3.jpg", "watch4-4.jpg"]}, "lava-e-seca": {"nome": "Lava e seca Samsung 13 kg", "preco": "R$ 3.500", "descricao": "Lava e seca Samsung WD13T, 13 kg, 127 V, inox.\nComprada em outubro de 2024, funcionando.\nAcompanha manual e capa protetora.", "arquivos": ["lava-e-seca-1.jpg", "lava-e-seca-2.jpg", "lava-e-seca-3.jpg", "lava-e-seca-4.jpg", "lava-e-seca-5.jpg", "lava-e-seca-6.jpg"]}, "traxxas": {"nome": "Carro de controle remoto Traxxas Slash", "preco": "R$ 1.700", "descricao": "Traxxas Slash 2WD, escala 1/10 (modelo 58034-1), pintura Hawaiian.\nCompleto, com rádio, baterias e carregador.\nPouquíssimo usado, funcionando.", "arquivos": ["traxxas-1.jpg", "traxxas-2.jpg", "traxxas-3.jpg", "traxxas-4.jpg", "traxxas-5.jpg", "traxxas-6.jpg"]}, "giz": {"nome": "Giz de calçada Crayola (48)", "preco": "R$ 50", "descricao": "Giz de calçada Crayola Washable Sidewalk Chalk, lavável, caixa com 48 gizes coloridos.", "arquivos": ["giz-1.jpg", "giz-2.jpg", "giz-3.jpg"]}, "lumix": {"nome": "Câmera Panasonic Lumix DMC-LZ6", "preco": "R$ 340", "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, zoom óptico 6x, com alça.\nFunciona com pilhas AA. Testada, funcionando.\nNão acompanha cabo.", "arquivos": ["lumix-1.jpg", "lumix-2.jpg", "lumix-3.jpg", "lumix-4.jpg"]}, "zippos": {"nome": "Isqueiros Zippo (2)", "preco": "R$ 220 cada", "descricao": "Dois isqueiros Zippo originais, Made in USA, cada um na caixa: \"Serenity Prayer\" e \"Human Being\".\nVazios, sem fluido.\nR$ 220 cada, ou os dois por R$ 400.", "arquivos": ["zippos-1.jpg", "zippos-2.jpg", "zippos-3.jpg", "zippos-4.jpg", "zippos-5.jpg"]}, "luva": {"nome": "Luva de beisebol Rawlings 13\"", "preco": "R$ 220", "descricao": "Luva de beisebol Rawlings RSB130GB, 13 polegadas.", "arquivos": ["luva-1.jpg", "luva-2.jpg"]}, "ssd": {"nome": "SSD WD NVMe 128 GB M.2 2230", "preco": "R$ 160", "descricao": "SSD Western Digital PC SN520 NVMe, 128 GB, formato M.2 2230 (o modelo curto, usado em notebooks finos, Surface e Steam Deck).", "arquivos": ["ssd-1.jpg", "ssd-2.jpg", "ssd-3.jpg"]}, "cabo": {"nome": "Cabo de rede/CFTV Sumay", "preco": "R$ 120", "descricao": "Cabo Sumay para CFTV e rede, 4 pares, 24 AWG, CCA (cobre revestido de alumínio).\nCaixa de 305 m aberta; a metragem restante não foi medida.", "arquivos": ["cabo-1.jpg", "cabo-2.jpg", "cabo-3.jpg", "cabo-4.jpg"]}, "pratos": {"nome": "Pratos de coleção Franklin Mint (6)", "preco": "R$ 70 cada", "descricao": "Pratos decorativos de porcelana Franklin Mint, edição limitada numerada, borda dourada, para pendurar na parede.\nArte indígena norte-americana de Hermon Adams, Paul Calle e Gary Ampel.\nR$ 70 cada, ou os 6 por R$ 380.\nO de fundo azul, com lobos, tem um pequeno lascado na borda: esse sai por R$ 30.", "arquivos": ["pratos-1.jpg", "pratos-2.jpg", "pratos-3.jpg", "pratos-4.jpg", "pratos-5.jpg", "pratos-6.jpg", "pratos-7.jpg", "pratos-8.jpg"]}, "saleiros": {"nome": "Saleiros de vidro (kit com 6)", "preco": "R$ 50", "descricao": "Saleiros de vidro em formato de lâmpada, tampa de metal de rosca. Sem uso, com a etiqueta da loja.\nKit com 6. Tenho vários kits.", "arquivos": ["saleiros-1.jpg", "saleiros-2.jpg"]}};
-const janela = document.getElementById('janela');
-const galeria = document.getElementById('galeria');
-const contador = document.getElementById('contador');
-let total = 0;
-function atualizaContador() {
-  const i = Math.round(galeria.scrollLeft / Math.max(galeria.clientWidth, 1));
-  contador.textContent = total > 1 ? `Foto ${i + 1} de ${total}` : '';
+const DADOS = {"watch4": {"nome": "Smartwatch Samsung Galaxy Watch4", "preco": "R$ 460", "descricao": "Samsung Galaxy Watch4 de 40 mm, versão Bluetooth, preto, com a pulseira original.\nMede passos, batimentos, sono e treinos, e mostra as notificações do celular (funciona com Android).\nVai com a caixa e o carregador. Tem marcas leves de uso e está tudo funcionando.", "html": "<div class=\"trilho\"><img src=\"fotos/watch4-1-g.jpg\" alt=\"Smartwatch Samsung Galaxy Watch4, foto 1 de 4\" draggable=\"false\"><img src=\"fotos/watch4-2-g.jpg\" alt=\"Smartwatch Samsung Galaxy Watch4, foto 2 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/watch4-3-g.jpg\" alt=\"Smartwatch Samsung Galaxy Watch4, foto 3 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/watch4-4-g.jpg\" alt=\"Smartwatch Samsung Galaxy Watch4, foto 4 de 4\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 4}, "lava-e-seca": {"nome": "Lava e seca Samsung 13 kg", "preco": "R$ 3.500", "descricao": "Lava e seca Samsung WD13T, 13 kg, 127 V, cor inox.\nComprada em outubro de 2024 e funcionando. Lava e seca no mesmo ciclo, então dispensa a secadora separada.\nVai com o manual e a capa protetora.", "html": "<div class=\"trilho\"><img src=\"fotos/lava-e-seca-1-g.jpg\" alt=\"Lava e seca Samsung 13 kg, foto 1 de 6\" draggable=\"false\"><img src=\"fotos/lava-e-seca-2-g.jpg\" alt=\"Lava e seca Samsung 13 kg, foto 2 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/lava-e-seca-3-g.jpg\" alt=\"Lava e seca Samsung 13 kg, foto 3 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/lava-e-seca-4-g.jpg\" alt=\"Lava e seca Samsung 13 kg, foto 4 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/lava-e-seca-5-g.jpg\" alt=\"Lava e seca Samsung 13 kg, foto 5 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/lava-e-seca-6-g.jpg\" alt=\"Lava e seca Samsung 13 kg, foto 6 de 6\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 6}, "traxxas": {"nome": "Carro de controle remoto Traxxas", "preco": "R$ 1.700", "descricao": "Traxxas Slash, carro elétrico de controle remoto de hobby, bem maior e mais rápido que os de brinquedo. Bom para adolescente ou adulto.\nVai completo: controle, baterias e carregador.\nFoi pouquíssimo usado e está funcionando.", "html": "<div class=\"trilho\"><img src=\"fotos/traxxas-1-g.jpg\" alt=\"Carro de controle remoto Traxxas, foto 1 de 6\" draggable=\"false\"><img src=\"fotos/traxxas-2-g.jpg\" alt=\"Carro de controle remoto Traxxas, foto 2 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/traxxas-3-g.jpg\" alt=\"Carro de controle remoto Traxxas, foto 3 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/traxxas-4-g.jpg\" alt=\"Carro de controle remoto Traxxas, foto 4 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/traxxas-5-g.jpg\" alt=\"Carro de controle remoto Traxxas, foto 5 de 6\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/traxxas-6-g.jpg\" alt=\"Carro de controle remoto Traxxas, foto 6 de 6\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 6}, "giz": {"nome": "Giz de calçada Crayola", "preco": "R$ 50", "descricao": "Caixa com 48 gizes de calçada Crayola, coloridos e laváveis, para as crianças desenharem no chão do playground. Sai com água.", "html": "<div class=\"trilho\"><img src=\"fotos/giz-1-g.jpg\" alt=\"Giz de calçada Crayola, foto 1 de 3\" draggable=\"false\"><img src=\"fotos/giz-2-g.jpg\" alt=\"Giz de calçada Crayola, foto 2 de 3\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/giz-3-g.jpg\" alt=\"Giz de calçada Crayola, foto 3 de 3\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 3}, "lumix": {"nome": "Câmera digital Panasonic Lumix", "preco": "R$ 340", "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, com zoom óptico de 6x e alça.\nUsa pilhas AA comuns. Está testada e funcionando.\nPara quem gosta de foto com cara de câmera digital dos anos 2000. Não vai cabo.", "html": "<div class=\"trilho\"><img src=\"fotos/lumix-1-g.jpg\" alt=\"Câmera digital Panasonic Lumix, foto 1 de 4\" draggable=\"false\"><img src=\"fotos/lumix-2-g.jpg\" alt=\"Câmera digital Panasonic Lumix, foto 2 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/lumix-3-g.jpg\" alt=\"Câmera digital Panasonic Lumix, foto 3 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/lumix-4-g.jpg\" alt=\"Câmera digital Panasonic Lumix, foto 4 de 4\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 4}, "zippo-serenity": {"nome": "Isqueiro Zippo Serenity Prayer", "preco": "R$ 220", "descricao": "Isqueiro Zippo original, feito nos EUA, gravado com a Oração da Serenidade. Vai na caixa.\nEstá vazio, sem fluido.\nLevando junto o Zippo Human Being, sai os dois por R$ 400.", "html": "<div class=\"trilho\"><img src=\"fotos/zippo-serenity-1-g.jpg\" alt=\"Isqueiro Zippo Serenity Prayer, foto 1 de 5\" draggable=\"false\"><img src=\"fotos/zippo-serenity-2-g.jpg\" alt=\"Isqueiro Zippo Serenity Prayer, foto 2 de 5\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/zippo-serenity-3-g.jpg\" alt=\"Isqueiro Zippo Serenity Prayer, foto 3 de 5\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/zippo-serenity-4-g.jpg\" alt=\"Isqueiro Zippo Serenity Prayer, foto 4 de 5\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/zippo-serenity-5-g.jpg\" alt=\"Isqueiro Zippo Serenity Prayer, foto 5 de 5\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 5}, "zippo-human": {"nome": "Isqueiro Zippo Human Being", "preco": "R$ 220", "descricao": "Isqueiro Zippo original, feito nos EUA, estampa \"Human Being\" com listras coloridas. Vai na caixa, com o certificado de garantia.\nEstá vazio, sem fluido.\nLevando junto o Zippo Serenity Prayer, sai os dois por R$ 400.", "html": "<div class=\"trilho\"><img src=\"fotos/zippo-human-1-g.jpg\" alt=\"Isqueiro Zippo Human Being, foto 1 de 4\" draggable=\"false\"><img src=\"fotos/zippo-human-2-g.jpg\" alt=\"Isqueiro Zippo Human Being, foto 2 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/zippo-human-3-g.jpg\" alt=\"Isqueiro Zippo Human Being, foto 3 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/zippo-human-4-g.jpg\" alt=\"Isqueiro Zippo Human Being, foto 4 de 4\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 4}, "cabo": {"nome": "Cabo de rede para internet", "preco": "R$ 120", "descricao": "Cabo de rede para levar a internet do roteador até outro cômodo: a TV, o videogame, o computador do escritório ou um ponto de wi-fi no quarto do fundo. Pelo cabo, a conexão fica mais estável que pelo wi-fi.\nA caixa original é de 305 m e já foi aberta; não medi quanto sobrou, mas é bastante cabo.\nVem sem os conectores nas pontas: quem instala coloca na hora.", "html": "<div class=\"trilho\"><img src=\"fotos/cabo-1-g.jpg\" alt=\"Cabo de rede para internet, foto 1 de 4\" draggable=\"false\"><img src=\"fotos/cabo-2-g.jpg\" alt=\"Cabo de rede para internet, foto 2 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/cabo-3-g.jpg\" alt=\"Cabo de rede para internet, foto 3 de 4\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/cabo-4-g.jpg\" alt=\"Cabo de rede para internet, foto 4 de 4\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 4}, "luva": {"nome": "Luva de beisebol Rawlings", "preco": "R$ 220", "descricao": "Luva de beisebol e softbol Rawlings, modelo RSB130GB, tamanho adulto (13 polegadas).", "html": "<div class=\"trilho\"><img src=\"fotos/luva-1-g.jpg\" alt=\"Luva de beisebol Rawlings, foto 1 de 2\" draggable=\"false\"><img src=\"fotos/luva-2-g.jpg\" alt=\"Luva de beisebol Rawlings, foto 2 de 2\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 2}, "ssd": {"nome": "SSD de 128 GB para notebook ou Steam Deck", "preco": "R$ 160", "descricao": "SSD Western Digital de 128 GB, no formato pequeno M.2 2230. É o tipo usado em alguns notebooks finos, no Surface e no Steam Deck.\nAntes de comprar, confira se o seu aparelho usa esse formato.", "html": "<div class=\"trilho\"><img src=\"fotos/ssd-1-g.jpg\" alt=\"SSD de 128 GB para notebook ou Steam Deck, foto 1 de 3\" draggable=\"false\"><img src=\"fotos/ssd-2-g.jpg\" alt=\"SSD de 128 GB para notebook ou Steam Deck, foto 2 de 3\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/ssd-3-g.jpg\" alt=\"SSD de 128 GB para notebook ou Steam Deck, foto 3 de 3\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 3}, "pratos": {"nome": "Pratos de coleção Franklin Mint", "preco": "R$ 70 cada", "descricao": "Seis pratos decorativos de porcelana Franklin Mint, de edição limitada e numerados, com borda dourada. Feitos para pendurar na parede.\nPinturas de tema indígena norte-americano, dos artistas Hermon Adams, Paul Calle e Gary Ampel.\nR$ 70 cada, ou os 6 por R$ 380. O de fundo azul, com os lobos, tem um pequeno lascado na borda e sai por R$ 30.", "html": "<div class=\"trilho\"><img src=\"fotos/pratos-1-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 1 de 8\" draggable=\"false\"><img src=\"fotos/pratos-2-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 2 de 8\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/pratos-3-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 3 de 8\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/pratos-4-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 4 de 8\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/pratos-5-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 5 de 8\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/pratos-6-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 6 de 8\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/pratos-7-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 7 de 8\" loading=\"lazy\" draggable=\"false\"><img src=\"fotos/pratos-8-g.jpg\" alt=\"Pratos de coleção Franklin Mint, foto 8 de 8\" loading=\"lazy\" draggable=\"false\"><\/div>", "total": 8}};
+
+function carrossel(el, aoMudar) {
+  const trilho = el.querySelector('.trilho');
+  const total = trilho.children.length;
+  const ant = el.querySelector('.ant'), prox = el.querySelector('.prox');
+  const pontos = el.querySelector('.pontos');
+  if (pontos) pontos.innerHTML = total > 1 ? '<i></i>'.repeat(total) : '';
+  let i = 0, x0 = null, arrastou = false;
+  function vai(n) {
+    i = Math.max(0, Math.min(total - 1, n));
+    trilho.style.transform = `translateX(${-100 * i}%)`;
+    ant.hidden = i === 0; prox.hidden = i === total - 1;
+    if (pontos) [...pontos.children].forEach((p, k) => p.classList.toggle('ativo', k === i));
+    if (aoMudar) aoMudar(i, total);
+  }
+  ant.addEventListener('click', e => { e.stopPropagation(); vai(i - 1); });
+  prox.addEventListener('click', e => { e.stopPropagation(); vai(i + 1); });
+  el.addEventListener('pointerdown', e => { if (!e.target.closest('.seta')) { x0 = e.clientX; arrastou = false; } });
+  el.addEventListener('pointerup', e => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) { arrastou = true; vai(dx < 0 ? i + 1 : i - 1); }
+  });
+  el.addEventListener('click', e => { if (arrastou) { e.stopImmediatePropagation(); arrastou = false; } }, true);
+  vai(0);
+  return { vai: n => vai(n), get i() { return i; } };
 }
+
+const janela = document.getElementById('janela');
+let atual = null;
+
 function abrir(id) {
   const d = DADOS[id]; if (!d) return;
-  document.getElementById('j-titulo').textContent = d.preco;
+  const velho = document.getElementById('j-carrossel');
+  const novo = document.createElement('div');
+  novo.className = 'carrossel'; novo.id = 'j-carrossel';
+  novo.innerHTML = d.html + '<button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button>';
+  velho.replaceWith(novo);
   document.getElementById('j-nome').textContent = d.nome;
   document.getElementById('j-preco').textContent = d.preco;
   document.getElementById('j-desc').textContent = d.descricao;
-  galeria.innerHTML = '';
-  d.arquivos.forEach((a, i) => {
-    const img = document.createElement('img');
-    img.src = 'fotos/' + a; img.alt = d.nome + ' (foto ' + (i + 1) + ')';
-    if (i > 0) img.loading = 'lazy';
-    galeria.appendChild(img);
-  });
-  total = d.arquivos.length;
-  document.querySelector('.setas').style.display = total > 1 ? 'flex' : 'none';
-  janela.showModal(); galeria.scrollLeft = 0; atualizaContador();
+  atual = carrossel(novo, (i, t) => { document.getElementById('j-contador').textContent = t > 1 ? `Foto ${i + 1} de ${t}` : ''; });
+  janela.showModal();
   try { history.replaceState(null, '', '#' + id); } catch (e) {}
 }
-function fechar() { janela.close(); }
+
+document.querySelectorAll('.nota').forEach(nota => {
+  carrossel(nota.querySelector('.carrossel'));
+  nota.querySelector('.ver').addEventListener('click', () => abrir(nota.dataset.id));
+  nota.querySelector('.carrossel').addEventListener('click', () => abrir(nota.dataset.id));
+});
+
+document.getElementById('fechar').addEventListener('click', () => janela.close());
+janela.addEventListener('click', e => { if (e.target === janela) janela.close(); });
 janela.addEventListener('close', () => { try { history.replaceState(null, '', location.pathname); } catch (e) {} });
-document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => abrir(c.dataset.id)));
-document.getElementById('fechar').addEventListener('click', fechar);
-janela.addEventListener('click', e => { if (e.target === janela) fechar(); });
-galeria.addEventListener('scroll', atualizaContador, { passive: true });
-document.getElementById('ant').addEventListener('click', () => galeria.scrollBy({ left: -galeria.clientWidth, behavior: 'smooth' }));
-document.getElementById('prox').addEventListener('click', () => galeria.scrollBy({ left: galeria.clientWidth, behavior: 'smooth' }));
+janela.addEventListener('keydown', e => {
+  if (!atual) return;
+  if (e.key === 'ArrowRight') atual.vai(atual.i + 1);
+  if (e.key === 'ArrowLeft') atual.vai(atual.i - 1);
+});
 if (location.hash && DADOS[location.hash.slice(1)]) abrir(location.hash.slice(1));
 </script>
 </body>

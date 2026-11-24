@@ -1,20 +1,21 @@
 """Gera a página de desapegos a partir de itens.json.
 
 Uso: python gerar.py PASTA_DAS_FOTOS_ORIGINAIS
-As fotos listadas em itens.json são caminhos relativos a essa pasta
-(a pasta Produtos do Motor de Preços). O script reduz cada foto,
-grava em fotos/ e escreve index.html.
+As fotos de itens.json são caminhos relativos a essa pasta (a pasta
+Produtos do Motor de Preços). Cada foto vira duas: uma grande (1280 px)
+para a janela de detalhes e uma média (720 px) para o cartão.
 """
 import html
 import json
 import os
+import shutil
 import sys
 
 from PIL import Image, ImageOps
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 ORIGEM = sys.argv[1]
-GRANDE, MINI = 1280, 640
+TAMANHOS = {"g": 1280, "m": 720}
 
 
 def reduzir(rel, destino, lado):
@@ -24,31 +25,48 @@ def reduzir(rel, destino, lado):
 
 
 itens = json.load(open(os.path.join(RAIZ, "itens.json"), encoding="utf-8"))
-os.makedirs(os.path.join(RAIZ, "fotos"), exist_ok=True)
+pasta = os.path.join(RAIZ, "fotos")
+shutil.rmtree(pasta, ignore_errors=True)
+os.makedirs(pasta)
 for it in itens:
-    nomes = []
+    it["arquivos"] = []
     for i, rel in enumerate(it["fotos"], 1):
-        nome = f"{it['id']}-{i}.jpg"
-        reduzir(rel, os.path.join(RAIZ, "fotos", nome), GRANDE)
-        nomes.append(nome)
-    reduzir(it.get("capa", it["fotos"][0]), os.path.join(RAIZ, "fotos", f"{it['id']}-capa.jpg"), MINI)
-    it["arquivos"] = nomes
+        base = f"{it['id']}-{i}"
+        for suf, lado in TAMANHOS.items():
+            reduzir(rel, os.path.join(pasta, f"{base}-{suf}.jpg"), lado)
+        it["arquivos"].append(base)
 
 e = html.escape
-cards, dados = [], {}
-for it in itens:
+
+
+def carrossel(it, tam):
+    total = len(it["arquivos"])
+    partes = []
+    for n, b in enumerate(it["arquivos"], 1):
+        lazy = ' loading="lazy"' if n > 1 else ""
+        partes.append(f'<img src="fotos/{b}-{tam}.jpg" alt="{e(it["nome"])}, foto {n} de {total}"{lazy} draggable="false">')
+    return '<div class="trilho">' + "".join(partes) + "</div>"
+
+
+cards = []
+dados = {}
+for n, it in enumerate(itens):
     cards.append(
-        f'<button class="card" data-id="{e(it["id"])}">'
-        f'<img src="fotos/{e(it["id"])}-capa.jpg" alt="{e(it["nome"])}" loading="lazy">'
-        f'<span class="info"><span class="nome">{e(it["nome"])}</span>'
-        f'<span class="resumo">{e(it["resumo"])}</span>'
-        f'<span class="preco">{e(it["preco"])}</span></span></button>'
+        f'<article class="nota" style="--giro:{[-1.2, .9, -.4, 1.3, -.8, .5][n % 6]}deg" data-id="{e(it["id"])}">'
+        f'<div class="carrossel" data-total="{len(it["arquivos"])}">{carrossel(it, "m")}'
+        '<button class="seta ant" aria-label="Foto anterior"></button>'
+        '<button class="seta prox" aria-label="Próxima foto"></button>'
+        '<div class="pontos"></div></div>'
+        f'<div class="texto"><h2>{e(it["nome"])}</h2><p>{e(it["resumo"])}</p>'
+        f'<div class="rodape"><span class="preco">{e(it["preco"])}</span>'
+        '<button class="ver">Ver detalhes</button></div></div></article>'
     )
-    dados[it["id"]] = {k: it[k] for k in ("nome", "preco", "descricao", "arquivos")}
+    dados[it["id"]] = {"nome": it["nome"], "preco": it["preco"], "descricao": it["descricao"],
+                       "html": carrossel(it, "g"), "total": len(it["arquivos"])}
 
 pagina = open(os.path.join(RAIZ, "modelo.html"), encoding="utf-8").read()
 pagina = pagina.replace("{{CARDS}}", "\n".join(cards))
 pagina = pagina.replace("{{DADOS}}", json.dumps(dados, ensure_ascii=False).replace("</", "<\\/"))
-pagina = pagina.replace("{{TOTAL}}", str(len(itens)))
+pagina = pagina.replace("{{CAPA}}", f"fotos/{itens[0]['arquivos'][0]}-m.jpg")
 open(os.path.join(RAIZ, "index.html"), "w", encoding="utf-8").write(pagina)
 print(f"{len(itens)} itens, index.html gerado")

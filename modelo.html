@@ -3,99 +3,195 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Desapegos</title>
-<meta name="description" content="Itens à venda. Toque em um item para ver as fotos e os detalhes.">
-<meta property="og:title" content="Desapegos">
-<meta property="og:description" content="Itens à venda. Toque em um item para ver as fotos e os detalhes.">
-<meta property="og:image" content="https://ewerside.github.io/desapegos/fotos/watch4-capa.jpg">
+<title>Desapegos do vizinho</title>
+<meta name="description" content="Coisas à venda de um vizinho. Veja as fotos e os preços.">
+<meta property="og:title" content="Desapegos do vizinho">
+<meta property="og:description" content="Coisas à venda de um vizinho. Veja as fotos e os preços.">
+<meta property="og:image" content="https://ewerside.github.io/desapegos/{{CAPA}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --fundo:#f6f4f0; --card:#fff; --texto:#1d1d1b; --suave:#6b6a66; --destaque:#1f6f5c; --borda:#e4e1da; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fundo); color:var(--texto); }
-  header { padding:28px 20px 8px; max-width:1100px; margin:0 auto; }
-  h1 { margin:0 0 6px; font-size:28px; letter-spacing:-.5px; }
-  header p { margin:0; color:var(--suave); font-size:15px; line-height:1.45; }
-  main { max-width:1100px; margin:0 auto; padding:16px 14px 40px; display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
-  @media (min-width:700px){ main { grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:18px; } }
-  .card { all:unset; cursor:pointer; background:var(--card); border:1px solid var(--borda); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s; }
-  .card:hover, .card:focus-visible { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.08); }
-  .card:focus-visible { outline:2px solid var(--destaque); }
-  .card img { width:100%; aspect-ratio:1; object-fit:cover; background:#eee; display:block; }
-  .info { padding:10px 12px 12px; display:flex; flex-direction:column; gap:3px; }
-  .nome { font-weight:600; font-size:15px; line-height:1.25; }
-  .resumo { color:var(--suave); font-size:13px; line-height:1.3; }
-  .preco { color:var(--destaque); font-weight:700; font-size:17px; margin-top:4px; }
-  footer { text-align:center; color:var(--suave); font-size:14px; padding:0 20px 36px; }
-  dialog { border:none; padding:0; width:min(760px,100vw); max-height:100dvh; border-radius:16px; background:var(--card); color:var(--texto); }
-  @media (max-width:700px){ dialog { width:100vw; height:100dvh; max-width:none; max-height:none; margin:0; border-radius:0; } }
-  dialog::backdrop { background:rgba(20,20,20,.6); }
-  .topo { display:flex; justify-content:space-between; align-items:center; padding:10px 12px; position:sticky; top:0; background:var(--card); z-index:2; border-bottom:1px solid var(--borda); }
-  .fechar { all:unset; cursor:pointer; font-size:15px; padding:8px 12px; border-radius:8px; background:var(--fundo); }
-  .galeria { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; background:#111; }
-  .galeria img { flex:0 0 100%; width:100%; max-height:70dvh; object-fit:contain; scroll-snap-align:center; }
-  .contador { text-align:center; color:var(--suave); font-size:13px; padding:8px 0 0; }
-  .detalhe { padding:12px 18px 26px; }
-  .detalhe h2 { margin:6px 0 4px; font-size:21px; }
-  .detalhe .preco { font-size:22px; }
-  .detalhe p { line-height:1.55; margin:10px 0 0; white-space:pre-line; }
-  .setas { display:flex; justify-content:center; gap:10px; padding-top:8px; }
-  .setas button { all:unset; cursor:pointer; padding:6px 14px; border:1px solid var(--borda); border-radius:8px; font-size:14px; }
+  :root {
+    --parede: #dfe7da;
+    --papel: #fffef8;
+    --tinta: #22324d;
+    --tinta-suave: #5d6b63;
+    --fita: rgba(240, 205, 96, .78);
+    --janela: #f2c94c;
+    --mao: "Shantell Sans", "Comic Neue", cursive;
+    --texto: "Figtree", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--tinta); font-family: var(--texto); font-size: 16px; line-height: 1.5;
+    background-color: var(--parede);
+    background-image: radial-gradient(rgba(34, 50, 77, .06) 1px, transparent 1.4px);
+    background-size: 14px 14px;
+  }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; }
+
+  header { max-width: 1080px; margin: 0 auto; padding: 32px 20px 8px; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items: end; }
+  header svg { grid-row: span 2; width: 92px; height: auto; }
+  h1 { font-family: var(--mao); font-weight: 700; font-size: clamp(30px, 6vw, 44px); line-height: 1.05; margin: 0; letter-spacing: -.5px; }
+  header p { margin: 0; color: var(--tinta-suave); max-width: 46ch; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 26px 16px 24px; display: grid; gap: 30px 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); }
+
+  .nota { position: relative; background: var(--papel); padding: 12px 12px 14px; transform: rotate(var(--giro)); box-shadow: 0 1px 1px rgba(34, 50, 77, .12), 0 14px 18px -14px rgba(34, 50, 77, .45); }
+  .nota::before { content: ""; position: absolute; top: -11px; left: 50%; width: 96px; height: 24px; transform: translateX(-50%) rotate(-3deg); background: var(--fita); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .25); z-index: 2; }
+  .nota:nth-child(3n)::before { transform: translateX(-50%) rotate(4deg); width: 84px; }
+  .nota:nth-child(4n+1)::before { background: rgba(160, 200, 220, .75); }
+
+  .carrossel { position: relative; overflow: hidden; background: #eef0ea; aspect-ratio: 1; touch-action: pan-y; user-select: none; }
+  .trilho { display: flex; height: 100%; transition: transform .3s ease; }
+  .trilho img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+  .seta { position: absolute; top: 50%; width: 38px; height: 38px; margin-top: -19px; border: none; border-radius: 50%; background: rgba(255, 254, 248, .92); cursor: pointer; z-index: 1; box-shadow: 0 1px 3px rgba(34, 50, 77, .3); }
+  .seta::after { content: ""; position: absolute; top: 50%; left: 50%; width: 9px; height: 9px; border-top: 2.5px solid var(--tinta); border-right: 2.5px solid var(--tinta); }
+  .seta.ant { left: 8px; } .seta.ant::after { transform: translate(-35%, -50%) rotate(-135deg); }
+  .seta.prox { right: 8px; } .seta.prox::after { transform: translate(-65%, -50%) rotate(45deg); }
+  .seta[hidden] { display: none; }
+  .pontos { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px; pointer-events: none; }
+  .pontos i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 254, 248, .6); box-shadow: 0 0 0 1px rgba(34, 50, 77, .25); }
+  .pontos i.ativo { background: var(--papel); transform: scale(1.25); }
+
+  .texto { padding: 12px 4px 0; }
+  .texto h2 { font-size: 18px; line-height: 1.25; margin: 0; font-weight: 600; }
+  .texto p { margin: 3px 0 0; color: var(--tinta-suave); font-size: 14.5px; line-height: 1.4; }
+  .rodape { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
+  .preco { font-family: var(--mao); font-weight: 700; font-size: 23px; line-height: 1; }
+  .ver { border: 1.5px solid var(--tinta); background: none; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .ver:hover { background: var(--tinta); color: var(--papel); }
+
+  footer { text-align: center; color: var(--tinta-suave); font-size: 14px; padding: 10px 20px 44px; }
+
+  dialog { border: none; padding: 0; width: min(720px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); background: var(--papel); color: var(--tinta); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .5); }
+  dialog::backdrop { background: rgba(34, 50, 77, .55); }
+  @media (max-width: 640px) { dialog { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; } }
+  .janela-topo { display: flex; justify-content: flex-end; padding: 10px 10px 0; }
+  .fechar { border: none; background: none; cursor: pointer; font-weight: 600; padding: 8px 10px; font-size: 15px; }
+  .janela-corpo { padding: 0 18px 26px; }
+  dialog .carrossel { aspect-ratio: 4 / 3; background: #f0f1ec; }
+  dialog .trilho img { object-fit: contain; }
+  .contador { text-align: center; color: var(--tinta-suave); font-size: 13px; margin-top: 6px; }
+  dialog h2 { font-size: 22px; line-height: 1.25; margin: 14px 0 4px; }
+  dialog .preco { font-size: 28px; }
+  .descricao { white-space: pre-line; margin: 14px 0 0; max-width: 62ch; }
+  .aviso { margin: 20px 0 0; padding-top: 14px; border-top: 1.5px dashed rgba(34, 50, 77, .25); font-family: var(--mao); font-size: 17px; }
+
+  @media (prefers-reduced-motion: reduce) { .trilho { transition: none; } }
 </style>
 </head>
 <body>
 <header>
-  <h1>Desapegos</h1>
-  <p>Toque em um item para ver as fotos e os detalhes. Para comprar, é só me chamar no WhatsApp.</p>
+  <svg viewBox="0 0 92 72" role="img" aria-label="Prédios">
+    <g fill="none" stroke="#22324d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M4 70h84"/>
+      <path d="M10 70V30h22v40"/>
+      <path d="M36 70V8h22v62"/>
+      <path d="M62 70V38h22v32"/>
+      <path d="M43 70v-9h8v9"/>
+    </g>
+    <g fill="#22324d" opacity=".75">
+      <rect x="15" y="36" width="5" height="6" rx="1"/><rect x="23" y="36" width="5" height="6" rx="1"/>
+      <rect x="15" y="48" width="5" height="6" rx="1"/><rect x="23" y="48" width="5" height="6" rx="1"/>
+      <rect x="41" y="15" width="5" height="6" rx="1"/><rect x="49" y="15" width="5" height="6" rx="1"/>
+      <rect x="41" y="27" width="5" height="6" rx="1"/>
+      <rect x="41" y="39" width="5" height="6" rx="1"/><rect x="49" y="39" width="5" height="6" rx="1"/>
+      <rect x="67" y="44" width="5" height="6" rx="1"/><rect x="75" y="44" width="5" height="6" rx="1"/>
+      <rect x="67" y="56" width="5" height="6" rx="1"/>
+    </g>
+    <rect x="49" y="27" width="5" height="6" rx="1" fill="#f2c94c"/>
+    <rect x="75" y="56" width="5" height="6" rx="1" fill="#f2c94c"/>
+  </svg>
+  <h1>Desapegos do vizinho</h1>
+  <p>Coisas que estou vendendo. Toque nas setas para ver mais fotos e em "Ver detalhes" para ler sobre cada uma.</p>
 </header>
+
 <main>
 {{CARDS}}
 </main>
-<footer>{{TOTAL}} itens disponíveis</footer>
 
-<dialog id="janela" aria-label="Detalhes do item">
-  <div class="topo"><strong id="j-titulo"></strong><button class="fechar" id="fechar">Fechar</button></div>
-  <div class="galeria" id="galeria"></div>
-  <div class="contador" id="contador"></div>
-  <div class="setas"><button id="ant" aria-label="Foto anterior">‹ Anterior</button><button id="prox" aria-label="Próxima foto">Próxima ›</button></div>
-  <div class="detalhe"><h2 id="j-nome"></h2><div class="preco" id="j-preco"></div><p id="j-desc"></p></div>
+<footer>Gostou de algo? Me chame no WhatsApp.</footer>
+
+<dialog id="janela" aria-labelledby="j-nome">
+  <div class="janela-topo"><button class="fechar" id="fechar">Fechar</button></div>
+  <div class="janela-corpo">
+    <div class="carrossel" id="j-carrossel">
+      <button class="seta ant" aria-label="Foto anterior"></button>
+      <button class="seta prox" aria-label="Próxima foto"></button>
+    </div>
+    <div class="contador" id="j-contador" aria-live="polite"></div>
+    <h2 id="j-nome"></h2>
+    <div class="preco" id="j-preco"></div>
+    <p class="descricao" id="j-desc"></p>
+    <p class="aviso">Para comprar ou tirar dúvidas, é só me chamar no WhatsApp.</p>
+  </div>
 </dialog>
 
 <script>
 const DADOS = {{DADOS}};
-const janela = document.getElementById('janela');
-const galeria = document.getElementById('galeria');
-const contador = document.getElementById('contador');
-let total = 0;
-function atualizaContador() {
-  const i = Math.round(galeria.scrollLeft / Math.max(galeria.clientWidth, 1));
-  contador.textContent = total > 1 ? `Foto ${i + 1} de ${total}` : '';
+
+function carrossel(el, aoMudar) {
+  const trilho = el.querySelector('.trilho');
+  const total = trilho.children.length;
+  const ant = el.querySelector('.ant'), prox = el.querySelector('.prox');
+  const pontos = el.querySelector('.pontos');
+  if (pontos) pontos.innerHTML = total > 1 ? '<i></i>'.repeat(total) : '';
+  let i = 0, x0 = null, arrastou = false;
+  function vai(n) {
+    i = Math.max(0, Math.min(total - 1, n));
+    trilho.style.transform = `translateX(${-100 * i}%)`;
+    ant.hidden = i === 0; prox.hidden = i === total - 1;
+    if (pontos) [...pontos.children].forEach((p, k) => p.classList.toggle('ativo', k === i));
+    if (aoMudar) aoMudar(i, total);
+  }
+  ant.addEventListener('click', e => { e.stopPropagation(); vai(i - 1); });
+  prox.addEventListener('click', e => { e.stopPropagation(); vai(i + 1); });
+  el.addEventListener('pointerdown', e => { if (!e.target.closest('.seta')) { x0 = e.clientX; arrastou = false; } });
+  el.addEventListener('pointerup', e => {
+    if (x0 === null) return;
+    const dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) { arrastou = true; vai(dx < 0 ? i + 1 : i - 1); }
+  });
+  el.addEventListener('click', e => { if (arrastou) { e.stopImmediatePropagation(); arrastou = false; } }, true);
+  vai(0);
+  return { vai: n => vai(n), get i() { return i; } };
 }
+
+const janela = document.getElementById('janela');
+let atual = null;
+
 function abrir(id) {
   const d = DADOS[id]; if (!d) return;
-  document.getElementById('j-titulo').textContent = d.preco;
+  const velho = document.getElementById('j-carrossel');
+  const novo = document.createElement('div');
+  novo.className = 'carrossel'; novo.id = 'j-carrossel';
+  novo.innerHTML = d.html + '<button class="seta ant" aria-label="Foto anterior"></button><button class="seta prox" aria-label="Próxima foto"></button>';
+  velho.replaceWith(novo);
   document.getElementById('j-nome').textContent = d.nome;
   document.getElementById('j-preco').textContent = d.preco;
   document.getElementById('j-desc').textContent = d.descricao;
-  galeria.innerHTML = '';
-  d.arquivos.forEach((a, i) => {
-    const img = document.createElement('img');
-    img.src = 'fotos/' + a; img.alt = d.nome + ' (foto ' + (i + 1) + ')';
-    if (i > 0) img.loading = 'lazy';
-    galeria.appendChild(img);
-  });
-  total = d.arquivos.length;
-  document.querySelector('.setas').style.display = total > 1 ? 'flex' : 'none';
-  janela.showModal(); galeria.scrollLeft = 0; atualizaContador();
+  atual = carrossel(novo, (i, t) => { document.getElementById('j-contador').textContent = t > 1 ? `Foto ${i + 1} de ${t}` : ''; });
+  janela.showModal();
   try { history.replaceState(null, '', '#' + id); } catch (e) {}
 }
-function fechar() { janela.close(); }
+
+document.querySelectorAll('.nota').forEach(nota => {
+  carrossel(nota.querySelector('.carrossel'));
+  nota.querySelector('.ver').addEventListener('click', () => abrir(nota.dataset.id));
+  nota.querySelector('.carrossel').addEventListener('click', () => abrir(nota.dataset.id));
+});
+
+document.getElementById('fechar').addEventListener('click', () => janela.close());
+janela.addEventListener('click', e => { if (e.target === janela) janela.close(); });
 janela.addEventListener('close', () => { try { history.replaceState(null, '', location.pathname); } catch (e) {} });
-document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => abrir(c.dataset.id)));
-document.getElementById('fechar').addEventListener('click', fechar);
-janela.addEventListener('click', e => { if (e.target === janela) fechar(); });
-galeria.addEventListener('scroll', atualizaContador, { passive: true });
-document.getElementById('ant').addEventListener('click', () => galeria.scrollBy({ left: -galeria.clientWidth, behavior: 'smooth' }));
-document.getElementById('prox').addEventListener('click', () => galeria.scrollBy({ left: galeria.clientWidth, behavior: 'smooth' }));
+janela.addEventListener('keydown', e => {
+  if (!atual) return;
+  if (e.key === 'ArrowRight') atual.vai(atual.i + 1);
+  if (e.key === 'ArrowLeft') atual.vai(atual.i - 1);
+});
 if (location.hash && DADOS[location.hash.slice(1)]) abrir(location.hash.slice(1));
 </script>
 </body>
