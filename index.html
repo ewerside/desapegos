@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Desapegos do vizinho</title>
+<title>Desapegos do Ewer</title>
 <meta name="description" content="Coisas à venda de um vizinho. Veja as fotos e os preços.">
-<meta property="og:title" content="Desapegos do vizinho">
+<meta property="og:title" content="Desapegos do Ewer">
 <meta property="og:description" content="Coisas à venda de um vizinho. Veja as fotos e os preços.">
 <meta property="og:image" content="https://ewerside.github.io/desapegos/fotos/watch4-1-m.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,13 @@
 <script>
   (function () {
     var t = new URLSearchParams(location.search).get('tema');
-    if (t === 'escuro' || t === 'claro') document.documentElement.dataset.tema = t;
+    if (t === 'noite' || t === 'escuro') t = 'noite'; if (t === 'noite' || t === 'claro') document.documentElement.dataset.tema = t;
   })();
 </script>
 <style>
   :root {
     --parede: #d6e2d1;
-    --padrao: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322324d%22%20stroke-opacity%3D%22.16%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M12%2050V22h18v28M17%2028h3M24%2028h3M17%2035h3M24%2035h3M17%2042h3M24%2042h3%22/%3E%20%3Cpath%20d%3D%22M70%20108V88l11-9%2011%209v20M78%20108v-8h6v8%22/%3E%20%3Ccircle%20cx%3D%2252%22%20cy%3D%2240%22%20r%3D%227%22/%3E%3Cpath%20d%3D%22M52%2047v8%22/%3E%20%3Ccircle%20cx%3D%22102%22%20cy%3D%2222%22%20r%3D%225%22/%3E%3Cpath%20d%3D%22M102%2027v6%22/%3E%20%3Cpath%20d%3D%22M14%2092h18M18%2092v-6h10v6%22/%3E%20%3C/g%3E%3C/svg%3E");
+    --padrao: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322324d%22%20stroke-opacity%3D%22.085%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M12%2050V22h18v28M17%2028h3M24%2028h3M17%2035h3M24%2035h3M17%2042h3M24%2042h3%22/%3E%3Cpath%20d%3D%22M70%20108V88l11-9%2011%209v20M78%20108v-8h6v8%22/%3E%20%3Ccircle%20cx%3D%2252%22%20cy%3D%2240%22%20r%3D%227%22/%3E%3Cpath%20d%3D%22M52%2047v8%22/%3E%3Ccircle%20cx%3D%22102%22%20cy%3D%2222%22%20r%3D%225%22/%3E%3Cpath%20d%3D%22M102%2027v6%22/%3E%3Cpath%20d%3D%22M14%2092h18M18%2092v-6h10v6%22/%3E%3C/g%3E%3C/svg%3E");
     --papel: #fffef8;
     --tinta: #22324d;
     --tinta-suave: #5d6b63;
@@ -32,27 +32,31 @@
     --mao: "Shantell Sans", "Comic Neue", cursive;
     --texto: "Figtree", system-ui, sans-serif;
   }
-  :root[data-tema="escuro"] {
-    --parede: #1e2b40;
-    --padrao: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22120%22%20height%3D%22120%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23e6edf7%22%20stroke-opacity%3D%22.12%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%20%3Cpath%20d%3D%22M12%2050V22h18v28M17%2028h3M24%2028h3M17%2035h3M24%2035h3M17%2042h3M24%2042h3%22/%3E%20%3Cpath%20d%3D%22M70%20108V88l11-9%2011%209v20M78%20108v-8h6v8%22/%3E%20%3Ccircle%20cx%3D%2252%22%20cy%3D%2240%22%20r%3D%227%22/%3E%3Cpath%20d%3D%22M52%2047v8%22/%3E%20%3Ccircle%20cx%3D%22102%22%20cy%3D%2222%22%20r%3D%225%22/%3E%3Cpath%20d%3D%22M102%2027v6%22/%3E%20%3Cpath%20d%3D%22M14%2092h18M18%2092v-6h10v6%22/%3E%20%3C/g%3E%3C/svg%3E");
+  :root[data-tema="noite"] {
+    --parede: #17213a;
+    --padrao: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%22160%22%20viewBox%3D%220%200%20160%20160%22%3E%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23cdd8ee%22%20stroke-opacity%3D%22.10%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M14%20150V70h30v80M54%20150V40h28v110M96%20150V90h26v60M130%20150V60h22v90%22/%3E%3C/g%3E%20%3Cg%20fill%3D%22%23f6cf62%22%3E%3Crect%20x%3D%2220%22%20y%3D%2280%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.55%22/%3E%3Crect%20x%3D%2232%22%20y%3D%22104%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.35%22/%3E%3Crect%20x%3D%2260%22%20y%3D%2252%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.5%22/%3E%3Crect%20x%3D%2270%22%20y%3D%2276%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.3%22/%3E%3Crect%20x%3D%2260%22%20y%3D%22112%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.45%22/%3E%3Crect%20x%3D%22102%22%20y%3D%22100%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.4%22/%3E%3Crect%20x%3D%22136%22%20y%3D%2272%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.5%22/%3E%3Crect%20x%3D%22144%22%20y%3D%22120%22%20width%3D%226%22%20height%3D%227%22%20opacity%3D%22.3%22/%3E%3C/g%3E%20%3Cg%20fill%3D%22%23cdd8ee%22%20stroke%3D%22none%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2222%22%20r%3D%221.2%22%20opacity%3D%22.45%22/%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%2216%22%20r%3D%221%22%20opacity%3D%22.35%22/%3E%3Ccircle%20cx%3D%22128%22%20cy%3D%2240%22%20r%3D%221.3%22%20opacity%3D%22.5%22/%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2258%22%20r%3D%22.9%22%20opacity%3D%22.3%22/%3E%3C/g%3E%20%3Cg%20fill%3D%22%23cdd8ee%22%20stroke%3D%22%23cdd8ee%22%20stroke-opacity%3D%22.08%22%20stroke-width%3D%221.5%22%20fill-opacity%3D%220%22%3E%3Crect%20x%3D%2220%22%20y%3D%2292%22%20width%3D%226%22%20height%3D%227%22/%3E%3Crect%20x%3D%2232%22%20y%3D%2280%22%20width%3D%226%22%20height%3D%227%22/%3E%3Crect%20x%3D%2270%22%20y%3D%2252%22%20width%3D%226%22%20height%3D%227%22/%3E%3Crect%20x%3D%2260%22%20y%3D%2276%22%20width%3D%226%22%20height%3D%227%22/%3E%3Crect%20x%3D%22114%22%20y%3D%22100%22%20width%3D%226%22%20height%3D%227%22/%3E%3Crect%20x%3D%22136%22%20y%3D%2296%22%20width%3D%226%22%20height%3D%227%22/%3E%3C/g%3E%3C/svg%3E");
     --titulo: #f4f1e6;
-    --subtitulo: #b9c4d3;
+    --subtitulo: #c9d2e0;
+    --tamanho-padrao: 160px 160px;
   }
+  :root[data-tema="noite"] header svg .janelas { fill: #f6cf62; opacity: .9; }
+  :root[data-tema="noite"] header svg .janelas rect:nth-child(3n) { fill: #8fa0bf; opacity: .45; }
   * { box-sizing: border-box; }
-  body { margin: 0; color: var(--tinta); font-family: var(--texto); font-size: 16px; line-height: 1.5; background: var(--parede) var(--padrao); background-size: 120px 120px; }
+  body { margin: 0; color: var(--tinta); font-family: var(--texto); font-size: 16px; line-height: 1.5; background: var(--parede) var(--padrao); background-size: var(--tamanho-padrao, 120px 120px); }
   button { font: inherit; color: inherit; }
   :focus-visible { outline: 3px solid #f2c94c; outline-offset: 2px; }
 
-  header { max-width: 1080px; margin: 0 auto; padding: 30px 20px 6px; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; align-items: center; color: var(--titulo); }
-  header svg { grid-row: span 3; width: 92px; height: auto; align-self: start; margin-top: 4px; }
-  h1 { font-family: var(--mao); font-weight: 700; font-size: clamp(30px, 6vw, 44px); line-height: 1.05; margin: 0; letter-spacing: -.5px; }
-  header p { margin: 0; color: var(--subtitulo); max-width: 48ch; }
-  @media (max-width: 520px) { header { grid-template-columns: 1fr; } header svg { grid-row: auto; width: 76px; } }
+  header { max-width: 1080px; margin: 0 auto; padding: 30px 20px 6px; display: grid; grid-template-columns: auto 1fr auto; gap: 10px 20px; align-items: center; color: var(--titulo); }
+  header svg { width: 92px; height: auto; }
+  h1 { font-family: var(--mao); font-weight: 700; font-size: clamp(32px, 6vw, 46px); line-height: 1.05; margin: 0; letter-spacing: -.5px; }
+  .bilhete { display: inline-block; margin: 10px 0 0; padding: 8px 14px 9px; background: var(--papel); color: var(--tinta); font-family: var(--mao); font-weight: 500; font-size: 16.5px; line-height: 1.4; max-width: 52ch; transform: rotate(-.6deg); box-shadow: 0 1px 1px rgba(0, 0, 0, .12), 0 10px 14px -12px rgba(0, 0, 0, .45); }
+  header .zap { align-self: center; }
+  @media (max-width: 760px) { header { grid-template-columns: auto 1fr; } header svg { width: 70px; align-self: start; } header .zap { grid-column: 1 / -1; justify-self: start; } }
 
   .zap { display: inline-flex; align-items: center; gap: 8px; background: var(--zap); color: #fff; text-decoration: none; font-weight: 700; border-radius: 999px; padding: 9px 16px 9px 13px; font-size: 15px; cursor: pointer; border: none; white-space: nowrap; }
   .zap::before { content: ""; width: 18px; height: 18px; flex: none; background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3z'/%3E%3C/svg%3E"); }
   .zap:hover { filter: brightness(1.08); }
-  header .zap { justify-self: start; font-size: 16px; padding: 11px 20px 11px 16px; }
+  header .zap { font-size: 16px; padding: 11px 20px 11px 16px; }
 
   main { max-width: 1080px; margin: 0 auto; padding: 30px 16px 24px; display: grid; gap: 34px 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); }
 
@@ -108,7 +112,7 @@
     <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
       <path d="M4 70h84"/><path d="M10 70V30h22v40"/><path d="M36 70V8h22v62"/><path d="M62 70V38h22v32"/><path d="M43 70v-9h8v9"/>
     </g>
-    <g fill="currentColor" opacity=".75">
+    <g class="janelas" fill="currentColor" opacity=".75">
       <rect x="15" y="36" width="5" height="6" rx="1"/><rect x="23" y="36" width="5" height="6" rx="1"/>
       <rect x="15" y="48" width="5" height="6" rx="1"/><rect x="23" y="48" width="5" height="6" rx="1"/>
       <rect x="41" y="15" width="5" height="6" rx="1"/><rect x="49" y="15" width="5" height="6" rx="1"/>
@@ -119,8 +123,10 @@
     </g>
     <rect x="49" y="27" width="5" height="6" rx="1" fill="#f2c94c"/><rect x="75" y="56" width="5" height="6" rx="1" fill="#f2c94c"/>
   </svg>
-  <h1>Desapegos do vizinho</h1>
-  <p>Coisas que estou vendendo. Use as setas para ver mais fotos e toque em "Ver detalhes" para ler sobre cada uma.</p>
+  <div>
+    <h1>Desapegos do Ewer</h1>
+    <p class="bilhete" id="bilhete">Oi! Sou um vizinho de vocês e estou desapegando de algumas coisas. Passe as fotos pelas setas e toque num item para ver os detalhes.</p>
+  </div>
   <a class="zap" data-local="topo" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
 </header>
 
@@ -188,6 +194,8 @@ function registra(tipo, extra) {
     fetch(API, { method: 'POST', keepalive: true, headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(corpo) }).catch(() => {});
   } catch (e) {}
 }
+const CONDOMINIOS = { majestic: 'Majestic', orquidea: 'Orquídea', 'saint-tropez': 'Saint Tropez' };
+if (grupo && CONDOMINIOS[grupo]) document.getElementById('bilhete').textContent = `Oi! Sou vizinho de vocês aqui no ${CONDOMINIOS[grupo]} e estou desapegando de algumas coisas. Passe as fotos pelas setas e toque num item para ver os detalhes.`;
 registra('visita', { origem: (document.referrer || '').slice(0, 300) || null, item: location.hash.slice(1) || null });
 let saiu = false;
 document.addEventListener('visibilitychange', () => {
