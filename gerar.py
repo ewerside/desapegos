@@ -58,8 +58,9 @@ for n, it in enumerate(itens):
         '<button class="seta prox" aria-label="Próxima foto"></button>'
         '<div class="pontos"></div></div>'
         f'<div class="texto"><h2>{e(it["nome"])}</h2><p>{e(it["resumo"])}</p>'
-        f'<div class="rodape"><span class="preco">{e(it["preco"])}</span>'
-        '<button class="ver">Ver detalhes</button></div></div></article>'
+        f'<span class="preco">{e(it["preco"])}</span>'
+        '<div class="acoes"><button class="ver">Ver detalhes</button>'
+        '<a class="zap" data-local="cartao" target="_blank" rel="noopener">Quero este</a></div></div></article>'
     )
     dados[it["id"]] = {"nome": it["nome"], "preco": it["preco"], "descricao": it["descricao"],
                        "html": carrossel(it, "g"), "total": len(it["arquivos"])}

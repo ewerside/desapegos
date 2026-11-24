@@ -5,7 +5,12 @@
     "preco": "R$ 460",
     "resumo": "40 mm, preto, com caixa e carregador",
     "descricao": "Samsung Galaxy Watch4 de 40 mm, versão Bluetooth, preto, com a pulseira original.\nMede passos, batimentos, sono e treinos, e mostra as notificações do celular (funciona com Android).\nVai com a caixa e o carregador. Tem marcas leves de uso e está tudo funcionando.",
-    "fotos": ["Samsung Galaxy smartwatch4/20261121_032349_700_foto.jpg", "Samsung Galaxy smartwatch4/20261121_032349_703_foto.jpg", "Samsung Galaxy smartwatch4/20261121_032349_699_foto.jpg", "Samsung Galaxy smartwatch4/20261121_032349_702_foto.jpg"]
+    "fotos": [
+      "Samsung Galaxy smartwatch4/20261121_032349_700_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_703_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_699_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_702_foto.jpg"
+    ]
   },
   {
     "id": "lava-e-seca",
@@ -13,7 +18,14 @@
     "preco": "R$ 3.500",
     "resumo": "Inox, 127 V, comprada em outubro de 2024",
     "descricao": "Lava e seca Samsung WD13T, 13 kg, 127 V, cor inox.\nComprada em outubro de 2024 e funcionando. Lava e seca no mesmo ciclo, então dispensa a secadora separada.\nVai com o manual e a capa protetora.",
-    "fotos": ["máquina de lavar Samsung/20261117_171900_37_foto.jpg", "máquina de lavar Samsung/20261117_171900_38_foto.jpg", "máquina de lavar Samsung/edicao_20261117_224738_410_foto.jpg", "máquina de lavar Samsung/edicao_20261117_224738_412_foto.jpg", "máquina de lavar Samsung/edicao_20261117_224738_413_foto.jpg", "máquina de lavar Samsung/edicao_20261119_175118_489_foto.jpg"]
+    "fotos": [
+      "máquina de lavar Samsung/20261117_171900_37_foto.jpg",
+      "máquina de lavar Samsung/20261117_171900_38_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261117_224738_410_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261117_224738_412_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261117_224738_413_foto.jpg",
+      "máquina de lavar Samsung/edicao_20261119_175118_489_foto.jpg"
+    ]
   },
   {
     "id": "traxxas",
@@ -21,7 +33,55 @@
     "preco": "R$ 1.700",
     "resumo": "Elétrico, grande (escala 1/10), completo",
     "descricao": "Traxxas Slash, carro elétrico de controle remoto de hobby, bem maior e mais rápido que os de brinquedo. Bom para adolescente ou adulto.\nVai completo: controle, baterias e carregador.\nFoi pouquíssimo usado e está funcionando.",
-    "fotos": ["carrinho controle remoto Traxxas/20261117_193509_169_foto.jpg", "carrinho controle remoto Traxxas/20261117_193509_168_foto.jpg", "carrinho controle remoto Traxxas/20261117_193509_167_foto.jpg", "carrinho controle remoto Traxxas/20261117_200431_180_foto.jpg", "carrinho controle remoto Traxxas/20261117_200431_181_foto.jpg", "carrinho controle remoto Traxxas/20261117_200431_182_foto.jpg"]
+    "fotos": [
+      "carrinho controle remoto Traxxas/20261117_193509_169_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_193509_168_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_193509_167_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_200431_180_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_200431_181_foto.jpg",
+      "carrinho controle remoto Traxxas/20261117_200431_182_foto.jpg"
+    ]
+  },
+  {
+    "id": "lava-loucas",
+    "nome": "Lava-louças Brastemp 8 serviços",
+    "preco": "R$ 750",
+    "resumo": "127 V, funciona muito bem, visual antigo",
+    "descricao": "Lava-louças Brastemp Ative!, 8 serviços, 127 V. Medidas: 55 x 51 x 63 cm.\nÉ antiga e está amarelada por fora, mas funciona muito bem e está em uso até hoje. Os cestos estão inteiros, com os dois porta-talheres.",
+    "fotos": [
+      "Lava louças/20261120_015232_628_foto.jpg",
+      "Lava louças/20261120_015232_629_foto.jpg",
+      "Lava louças/20261120_015232_630_foto.jpg"
+    ]
+  },
+  {
+    "id": "armario",
+    "nome": "Armário de aço com 75 gavetinhas",
+    "preco": "R$ 740",
+    "resumo": "Com chave, 98 x 68 x 28 cm",
+    "descricao": "Armário de aço com portas e chave, com 75 gavetinhas de acrílico transparente. Medidas: 98 x 68 x 28 cm.\nBom para organizar ferramentas, parafusos, material de artesanato, maquiagem ou peças pequenas.\nTem alguns amassados na lata.",
+    "fotos": [
+      "armário pequeno de metal com 75 gavetinhas/20261117_203208_347_foto.jpg",
+      "armário pequeno de metal com 75 gavetinhas/20261117_203208_350_foto.jpg",
+      "armário pequeno de metal com 75 gavetinhas/20261117_203208_346_foto.jpg",
+      "armário pequeno de metal com 75 gavetinhas/20261117_203208_345_foto.jpg",
+      "armário pequeno de metal com 75 gavetinhas/20261117_203208_349_foto.jpg",
+      "armário pequeno de metal com 75 gavetinhas/20261117_202928_338_foto.jpg"
+    ]
+  },
+  {
+    "id": "quadro",
+    "nome": "Quadro branco grande Stalo",
+    "preco": "R$ 220",
+    "resumo": "150 x 120 cm, moldura de alumínio",
+    "descricao": "Quadro branco Stalo de 150 x 120 cm, com moldura de alumínio. Bom para home office, para estudar ou para as crianças.\nTem algumas marcas de uso na superfície (aparecem nas fotos).",
+    "fotos": [
+      "Quadro branco/20261119_174202_458_foto.jpg",
+      "Quadro branco/20261119_174202_459_foto.jpg",
+      "Quadro branco/20261119_174425_470_foto.jpg",
+      "Quadro branco/20261119_174425_471_foto.jpg",
+      "Quadro branco/20261119_174202_456_foto.jpg"
+    ]
   },
   {
     "id": "giz",
@@ -29,7 +89,11 @@
     "preco": "R$ 50",
     "resumo": "Caixa com 48 gizes laváveis",
     "descricao": "Caixa com 48 gizes de calçada Crayola, coloridos e laváveis, para as crianças desenharem no chão do playground. Sai com água.",
-    "fotos": ["caixa de giz/20261117_202022_281_foto.jpg", "caixa de giz/20261117_202022_279_foto.jpg", "caixa de giz/20261117_202022_280_foto.jpg"]
+    "fotos": [
+      "caixa de giz/20261117_202022_281_foto.jpg",
+      "caixa de giz/20261117_202022_279_foto.jpg",
+      "caixa de giz/20261117_202022_280_foto.jpg"
+    ]
   },
   {
     "id": "lumix",
@@ -37,23 +101,25 @@
     "preco": "R$ 340",
     "resumo": "Modelo LZ6, zoom de 6x, funcionando",
     "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, com zoom óptico de 6x e alça.\nUsa pilhas AA comuns. Está testada e funcionando.\nPara quem gosta de foto com cara de câmera digital dos anos 2000. Não vai cabo.",
-    "fotos": ["câmera antiga/20261117_202138_294_foto.jpg", "câmera antiga/20261117_202138_295_foto.jpg", "câmera antiga/20261117_202138_293_foto.jpg", "câmera antiga/20261117_202138_292_foto.jpg"]
+    "fotos": [
+      "câmera antiga/20261117_202138_294_foto.jpg",
+      "câmera antiga/20261117_202138_295_foto.jpg",
+      "câmera antiga/20261117_202138_293_foto.jpg",
+      "câmera antiga/20261117_202138_292_foto.jpg"
+    ]
   },
   {
-    "id": "zippo-serenity",
-    "nome": "Isqueiro Zippo Serenity Prayer",
+    "id": "nobreak",
+    "nome": "Nobreak TS Shara 500 VA",
     "preco": "R$ 220",
-    "resumo": "Original, Made in USA, na caixa",
-    "descricao": "Isqueiro Zippo original, feito nos EUA, gravado com a Oração da Serenidade. Vai na caixa.\nEstá vazio, sem fluido.\nLevando junto o Zippo Human Being, sai os dois por R$ 400.",
-    "fotos": ["isqueiros Zippo/20261117_202406_311_foto.jpg", "isqueiros Zippo/20261117_202406_307_foto.jpg", "isqueiros Zippo/20261117_202406_308_foto.jpg", "isqueiros Zippo/20261117_202406_309_foto.jpg", "isqueiros Zippo/20261117_202406_312_foto.jpg"]
-  },
-  {
-    "id": "zippo-human",
-    "nome": "Isqueiro Zippo Human Being",
-    "preco": "R$ 220",
-    "resumo": "Original, Made in USA, na caixa",
-    "descricao": "Isqueiro Zippo original, feito nos EUA, estampa \"Human Being\" com listras coloridas. Vai na caixa, com o certificado de garantia.\nEstá vazio, sem fluido.\nLevando junto o Zippo Serenity Prayer, sai os dois por R$ 400.",
-    "fotos": ["isqueiros Zippo/20261117_202406_315_foto.jpg", "isqueiros Zippo/20261117_202406_313_foto.jpg", "isqueiros Zippo/20261117_202406_314_foto.jpg", "isqueiros Zippo/20261117_202406_316_foto.jpg"]
+    "resumo": "Para computador ou roteador, 6 tomadas",
+    "descricao": "Nobreak TS Shara UPS Mini 500 VA (115 V), com 6 tomadas. Segura o computador, o roteador ou a TV quando a luz pisca ou cai.\nA bateria não foi testada e ele faz um zumbido baixo desde que foi comprado.",
+    "fotos": [
+      "Nobreak/20261119_175518_514_foto.jpg",
+      "Nobreak/20261119_175518_516_foto.jpg",
+      "Nobreak/20261119_175518_515_foto.jpg",
+      "Nobreak/20261119_175518_517_foto.jpg"
+    ]
   },
   {
     "id": "cabo",
@@ -61,7 +127,39 @@
     "preco": "R$ 120",
     "resumo": "Caixa de 305 m já aberta, sobra bastante",
     "descricao": "Cabo de rede para levar a internet do roteador até outro cômodo: a TV, o videogame, o computador do escritório ou um ponto de wi-fi no quarto do fundo. Pelo cabo, a conexão fica mais estável que pelo wi-fi.\nA caixa original é de 305 m e já foi aberta; não medi quanto sobrou, mas é bastante cabo.\nVem sem os conectores nas pontas: quem instala coloca na hora.",
-    "fotos": ["Cabo internet/20261121_175051_725_foto.jpg", "Cabo internet/20261121_175051_728_foto.jpg", "Cabo internet/20261121_175051_727_foto.jpg", "Cabo internet/20261121_175051_726_foto.jpg"]
+    "fotos": [
+      "Cabo internet/20261121_175051_725_foto.jpg",
+      "Cabo internet/20261121_175051_728_foto.jpg",
+      "Cabo internet/20261121_175051_727_foto.jpg",
+      "Cabo internet/20261121_175051_726_foto.jpg"
+    ]
+  },
+  {
+    "id": "zippo-serenity",
+    "nome": "Isqueiro Zippo Serenity Prayer",
+    "preco": "R$ 220",
+    "resumo": "Original, Made in USA, na caixa",
+    "descricao": "Isqueiro Zippo original, feito nos EUA, gravado com a Oração da Serenidade. Vai na caixa.\nEstá vazio, sem fluido.\nLevando junto o Zippo Human Being, sai os dois por R$ 400.",
+    "fotos": [
+      "isqueiros Zippo/20261117_202406_311_foto.jpg",
+      "isqueiros Zippo/20261117_202406_307_foto.jpg",
+      "isqueiros Zippo/20261117_202406_308_foto.jpg",
+      "isqueiros Zippo/20261117_202406_309_foto.jpg",
+      "isqueiros Zippo/20261117_202406_312_foto.jpg"
+    ]
+  },
+  {
+    "id": "zippo-human",
+    "nome": "Isqueiro Zippo Human Being",
+    "preco": "R$ 220",
+    "resumo": "Original, Made in USA, na caixa",
+    "descricao": "Isqueiro Zippo original, feito nos EUA, estampa \"Human Being\" com listras coloridas. Vai na caixa, com o certificado de garantia.\nEstá vazio, sem fluido.\nLevando junto o Zippo Serenity Prayer, sai os dois por R$ 400.",
+    "fotos": [
+      "isqueiros Zippo/20261117_202406_315_foto.jpg",
+      "isqueiros Zippo/20261117_202406_313_foto.jpg",
+      "isqueiros Zippo/20261117_202406_314_foto.jpg",
+      "isqueiros Zippo/20261117_202406_316_foto.jpg"
+    ]
   },
   {
     "id": "luva",
@@ -69,7 +167,10 @@
     "preco": "R$ 220",
     "resumo": "Tamanho adulto, 13 polegadas",
     "descricao": "Luva de beisebol e softbol Rawlings, modelo RSB130GB, tamanho adulto (13 polegadas).",
-    "fotos": ["luve de beiseball/20261117_200658_196_foto.jpg", "luve de beiseball/20261117_200658_195_foto.jpg"]
+    "fotos": [
+      "luve de beiseball/20261117_200658_196_foto.jpg",
+      "luve de beiseball/20261117_200658_195_foto.jpg"
+    ]
   },
   {
     "id": "ssd",
@@ -77,7 +178,11 @@
     "preco": "R$ 160",
     "resumo": "Western Digital, formato pequeno M.2 2230",
     "descricao": "SSD Western Digital de 128 GB, no formato pequeno M.2 2230. É o tipo usado em alguns notebooks finos, no Surface e no Steam Deck.\nAntes de comprar, confira se o seu aparelho usa esse formato.",
-    "fotos": ["Ssd nvme 128GB/20261119_181236_530_foto.jpg", "Ssd nvme 128GB/20261119_181236_528_foto.jpg", "Ssd nvme 128GB/20261119_181236_529_foto.jpg"]
+    "fotos": [
+      "Ssd nvme 128GB/20261119_181236_530_foto.jpg",
+      "Ssd nvme 128GB/20261119_181236_528_foto.jpg",
+      "Ssd nvme 128GB/20261119_181236_529_foto.jpg"
+    ]
   },
   {
     "id": "pratos",
@@ -85,6 +190,26 @@
     "preco": "R$ 70 cada",
     "resumo": "Porcelana pintada, para pendurar na parede",
     "descricao": "Seis pratos decorativos de porcelana Franklin Mint, de edição limitada e numerados, com borda dourada. Feitos para pendurar na parede.\nPinturas de tema indígena norte-americano, dos artistas Hermon Adams, Paul Calle e Gary Ampel.\nR$ 70 cada, ou os 6 por R$ 380. O de fundo azul, com os lobos, tem um pequeno lascado na borda e sai por R$ 30.",
-    "fotos": ["Pratos arte indígena/grupo_pratos_colagem.jpg", "Pratos arte indígena/20261120_014519_570_foto.jpg", "Pratos arte indígena/20261120_014519_572_foto.jpg", "Pratos arte indígena/20261120_014519_574_foto.jpg", "Pratos arte indígena/20261120_014519_579_foto.jpg", "Pratos arte indígena/20261120_014520_581_foto.jpg", "Pratos arte indígena/20261120_014519_573_foto.jpg", "Pratos arte indígena/20261120_014519_575_foto.jpg"]
+    "fotos": [
+      "Pratos arte indígena/grupo_pratos_colagem.jpg",
+      "Pratos arte indígena/20261120_014519_570_foto.jpg",
+      "Pratos arte indígena/20261120_014519_572_foto.jpg",
+      "Pratos arte indígena/20261120_014519_574_foto.jpg",
+      "Pratos arte indígena/20261120_014519_579_foto.jpg",
+      "Pratos arte indígena/20261120_014520_581_foto.jpg",
+      "Pratos arte indígena/20261120_014519_573_foto.jpg",
+      "Pratos arte indígena/20261120_014519_575_foto.jpg"
+    ]
+  },
+  {
+    "id": "pedras",
+    "nome": "Pedras decorativas",
+    "preco": "R$ 40 as duas",
+    "resumo": "Drusa de cristais e pedra rolada",
+    "descricao": "Duas pedras para decoração: uma drusa de cristais (6 a 8 cm) e uma pedra rolada pequena. As duas juntas por R$ 40.",
+    "fotos": [
+      "Pedras/20261119_175252_500_foto.jpg",
+      "Pedras/20261119_175302_502_foto.jpg"
+    ]
   }
 ]
