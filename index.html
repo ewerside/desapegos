@@ -179,8 +179,10 @@ const visitante = guardado(localStorage, 'desapegos_visitante', aleatorio());
 const sessao = guardado(sessionStorage, 'desapegos_sessao', aleatorio());
 const dispositivo = matchMedia('(pointer: coarse)').matches ? 'celular' : 'computador';
 const inicio = Date.now();
+let dono = false;
+try { if (params.has('eu')) localStorage.setItem('desapegos_dono', '1'); dono = localStorage.getItem('desapegos_dono') === '1'; } catch (e) {}
 function registra(tipo, extra) {
-  if (params.has('teste')) return;
+  if (params.has('teste') || dono) return;
   const corpo = Object.assign({ tipo, grupo, visitante, sessao, dispositivo }, extra || {});
   try {
     fetch(API, { method: 'POST', keepalive: true, headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(corpo) }).catch(() => {});
