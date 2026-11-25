@@ -96,6 +96,24 @@
     "notion": "41ec543df8fd810d9f2dea59432e244f"
   },
   {
+    "id": "pratos",
+    "nome": "Pratos de coleção Franklin Mint",
+    "preco": "R$ 70 cada",
+    "resumo": "Porcelana pintada, para pendurar na parede",
+    "descricao": "Seis pratos decorativos de porcelana Franklin Mint, de edição limitada e numerados, com borda dourada. Feitos para pendurar na parede.\nPinturas de tema indígena norte-americano, dos artistas Hermon Adams, Paul Calle e Gary Ampel.\nR$ 70 cada, ou os 6 por R$ 380. O de fundo azul, com os lobos, tem um pequeno lascado na borda e sai por R$ 30.",
+    "fotos": [
+      "Pratos arte indígena/grupo_pratos_colagem.jpg",
+      "Pratos arte indígena/20261120_014519_570_foto.jpg",
+      "Pratos arte indígena/20261120_014519_572_foto.jpg",
+      "Pratos arte indígena/20261120_014519_574_foto.jpg",
+      "Pratos arte indígena/20261120_014519_579_foto.jpg",
+      "Pratos arte indígena/20261120_014520_581_foto.jpg",
+      "Pratos arte indígena/20261120_014519_573_foto.jpg",
+      "Pratos arte indígena/20261120_014519_575_foto.jpg"
+    ],
+    "notion": "41ec543df8fd81cb836aed3526785b49"
+  },
+  {
     "id": "giz",
     "nome": "Giz de calçada Crayola",
     "preco": "R$ 50",
@@ -160,23 +178,5 @@
       "Ssd nvme 128GB/20261119_181236_529_foto.jpg"
     ],
     "notion": "41dc543df8fd81b0afdbecce8d7daa3d"
-  },
-  {
-    "id": "pratos",
-    "nome": "Pratos de coleção Franklin Mint",
-    "preco": "R$ 70 cada",
-    "resumo": "Porcelana pintada, para pendurar na parede",
-    "descricao": "Seis pratos decorativos de porcelana Franklin Mint, de edição limitada e numerados, com borda dourada. Feitos para pendurar na parede.\nPinturas de tema indígena norte-americano, dos artistas Hermon Adams, Paul Calle e Gary Ampel.\nR$ 70 cada, ou os 6 por R$ 380. O de fundo azul, com os lobos, tem um pequeno lascado na borda e sai por R$ 30.",
-    "fotos": [
-      "Pratos arte indígena/grupo_pratos_colagem.jpg",
-      "Pratos arte indígena/20261120_014519_570_foto.jpg",
-      "Pratos arte indígena/20261120_014519_572_foto.jpg",
-      "Pratos arte indígena/20261120_014519_574_foto.jpg",
-      "Pratos arte indígena/20261120_014519_579_foto.jpg",
-      "Pratos arte indígena/20261120_014520_581_foto.jpg",
-      "Pratos arte indígena/20261120_014519_573_foto.jpg",
-      "Pratos arte indígena/20261120_014519_575_foto.jpg"
-    ],
-    "notion": "41ec543df8fd81cb836aed3526785b49"
   }
 ]
