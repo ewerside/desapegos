@@ -90,8 +90,7 @@
       "Gaveteiros/20261120_014937_609_foto.jpg",
       "Gaveteiros/20261120_014937_610_foto.jpg",
       "Gaveteiros/20261120_014937_611_foto.jpg",
-      "Gaveteiros/20261120_014937_612_foto.jpg",
-      "Gaveteiros/edicao_20261120_015448_646_foto.jpg"
+      "Gaveteiros/20261120_014937_612_foto.jpg"
     ],
     "notion": "41ec543df8fd810d9f2dea59432e244f"
   },
@@ -127,20 +126,6 @@
     "notion": "41cc543df8fd81e9af89ed0a8057b4e3"
   },
   {
-    "id": "nobreak",
-    "nome": "Nobreak TS Shara 500 VA",
-    "preco": "R$ 180",
-    "resumo": "Para computador ou roteador, 6 tomadas",
-    "descricao": "Nobreak TS Shara UPS Mini 500 VA (115 V), com 6 tomadas. Segura o computador, o roteador ou a TV quando a luz pisca ou cai.\nA bateria não foi testada e ele faz um zumbido baixo desde que foi comprado.",
-    "fotos": [
-      "Nobreak/20261119_175518_514_foto.jpg",
-      "Nobreak/20261119_175518_516_foto.jpg",
-      "Nobreak/20261119_175518_515_foto.jpg",
-      "Nobreak/20261119_175518_517_foto.jpg"
-    ],
-    "notion": "41dc543df8fd81429047c88e81c4c01a"
-  },
-  {
     "id": "cabo",
     "nome": "Cabo de rede para internet",
     "preco": "R$ 80",
@@ -157,7 +142,7 @@
   {
     "id": "luva",
     "nome": "Luva de beisebol Rawlings",
-    "preco": "R$ 120",
+    "preco": "R$ 80",
     "resumo": "Tamanho adulto, 13 polegadas",
     "descricao": "Luva de beisebol e softbol Rawlings, modelo RSB130GB, tamanho adulto (13 polegadas).",
     "fotos": [
