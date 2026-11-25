@@ -1,0 +1,45 @@
+[
+  {
+    "id": "lumix",
+    "nome": "Câmera digital retrô Panasonic Lumix",
+    "preco": "R$ 340",
+    "resumo": "Digicam dos anos 2000, zoom de 6x",
+    "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, uma digicam dos anos 2000, daquelas que voltaram à moda pelas fotos com cara de época. Zoom óptico de 6x e alça.\nUsa pilhas AA comuns. Está testada e funcionando. Não vai cabo.",
+    "fotos": [
+      "câmera antiga/20261117_202138_294_foto.jpg",
+      "câmera antiga/20261117_202138_295_foto.jpg",
+      "câmera antiga/20261117_202138_293_foto.jpg",
+      "câmera antiga/20261117_202138_292_foto.jpg"
+    ],
+    "notion": "41cc543df8fd81cda56efb442b9910a5"
+  },
+  {
+    "id": "zippo-serenity",
+    "nome": "Isqueiro Zippo Serenity Prayer",
+    "preco": "R$ 180",
+    "resumo": "Original, Made in USA, na caixa",
+    "descricao": "Isqueiro Zippo original, feito nos EUA, gravado com a Oração da Serenidade. Vai na caixa.\nEstá vazio, sem fluido.\nLevando junto o Zippo Human Being, sai os dois por R$ 340.",
+    "fotos": [
+      "isqueiros Zippo/20261117_202406_311_foto.jpg",
+      "isqueiros Zippo/20261117_202406_307_foto.jpg",
+      "isqueiros Zippo/20261117_202406_308_foto.jpg",
+      "isqueiros Zippo/20261117_202406_309_foto.jpg",
+      "isqueiros Zippo/20261117_202406_312_foto.jpg"
+    ],
+    "notion": "41cc543df8fd8136ace2c1d97d32b95f"
+  },
+  {
+    "id": "zippo-human",
+    "nome": "Isqueiro Zippo Human Being",
+    "preco": "R$ 180",
+    "resumo": "Original, Made in USA, na caixa",
+    "descricao": "Isqueiro Zippo original, feito nos EUA, estampa \"Human Being\" com listras coloridas. Vai na caixa, com o certificado de garantia.\nEstá vazio, sem fluido.\nLevando junto o Zippo Serenity Prayer, sai os dois por R$ 340.",
+    "fotos": [
+      "isqueiros Zippo/20261117_202406_315_foto.jpg",
+      "isqueiros Zippo/20261117_202406_313_foto.jpg",
+      "isqueiros Zippo/20261117_202406_314_foto.jpg",
+      "isqueiros Zippo/20261117_202406_316_foto.jpg"
+    ],
+    "notion": "41cc543df8fd81d1aea7f95923bdec88"
+  }
+]
