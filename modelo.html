@@ -14,7 +14,10 @@
 <script>
   (function () {
     var t = new URLSearchParams(location.search).get('tema');
-    if (t === 'noite' || t === 'escuro') t = 'noite'; if (t === 'noite' || t === 'claro') document.documentElement.dataset.tema = t;
+    if (t === 'escuro') t = 'noite';
+    if (t !== 'noite' && t !== 'claro') { try { t = sessionStorage.getItem('desapegos_tema'); } catch (e) {} }
+    if (t !== 'noite' && t !== 'claro') { var h = new Date().getHours(); t = (h >= 18 || h < 6) ? 'noite' : 'claro'; }
+    document.documentElement.dataset.tema = t;
   })();
 </script>
 <style>
@@ -57,6 +60,7 @@
   @media (max-width: 760px) {
     header { grid-template-columns: auto 1fr; grid-template-areas: "icone titulo" "bilhete bilhete" "zap zap"; gap: 12px 14px; padding-top: 22px; }
     header svg { width: 64px; }
+    h1 { padding-right: 44px; }
     .bilhete { margin-top: 2px; max-width: none; }
     header .zap { justify-self: start; }
   }
@@ -94,6 +98,14 @@
   .ver:hover { background: var(--tinta); color: var(--papel); }
   .acoes .zap { font-size: 14px; padding: 8px 14px 8px 11px; }
 
+  .tema { position: absolute; top: 14px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: none; background: var(--papel); cursor: pointer; box-shadow: 0 1px 3px rgba(0, 0, 0, .25); display: grid; place-items: center; }
+  .tema svg { width: 20px; height: 20px; }
+  .tema .lua { display: none; }
+  :root[data-tema="noite"] .tema .lua { display: block; }
+  :root[data-tema="noite"] .tema .sol { display: none; }
+  body { position: relative; }
+  .olx { display: inline-block; margin-top: 22px; font-size: 13.5px; color: var(--subtitulo); }
+  .olx a { color: inherit; }
   footer { max-width: 560px; margin: 8px auto 0; padding: 0 20px 48px; text-align: center; color: var(--titulo); }
   footer p { font-family: var(--mao); font-size: 20px; margin: 0 0 12px; }
 
@@ -115,6 +127,10 @@
 </style>
 </head>
 <body>
+<button class="tema" id="tema" aria-label="Trocar entre dia e noite" title="Dia ou noite">
+  <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="#22324d" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  <svg class="lua" viewBox="0 0 24 24" fill="#22324d"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+</button>
 <header>
   <svg viewBox="0 0 92 72" role="img" aria-label="Prédios">
     <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
@@ -132,7 +148,7 @@
     <rect x="49" y="27" width="5" height="6" rx="1" fill="#f2c94c"/><rect x="75" y="56" width="5" height="6" rx="1" fill="#f2c94c"/>
   </svg>
   <h1>Desapegos do Ewer</h1>
-  <p class="bilhete" id="bilhete">Oi! Sou um vizinho de vocês e estou desapegando de algumas coisas. Passe as fotos pelas setas e toque num item para ver os detalhes.</p>
+  <p class="bilhete" id="bilhete">Olá! Sou vizinho de vocês e estou desapegando de algumas coisas. Para quem é daqui, deixei os preços abaixo dos meus anúncios na internet.</p>
   <a class="zap" data-local="topo" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
 </header>
 
@@ -143,6 +159,7 @@
 <footer>
   <p>Gostou de alguma coisa? Me chama.</p>
   <a class="zap" data-local="rodape" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
+  <br><span class="olx">Vários destes itens também estão no <a id="link-olx" href="https://www.olx.com.br/perfil/ewerton-86bbefd3" target="_blank" rel="noopener">meu perfil da OLX</a>.</span>
 </footer>
 
 <dialog id="janela" aria-labelledby="j-nome">
@@ -186,8 +203,8 @@ function registra(tipo, extra) {
   } catch (e) {}
 }
 const CONDOMINIOS = { majestic: 'Majestic', orquidea: 'Orquídea', 'saint-tropez': 'Saint Tropez' };
-if (grupo && CONDOMINIOS[grupo]) document.getElementById('bilhete').textContent = `Oi! Sou vizinho de vocês aqui no ${CONDOMINIOS[grupo]} e estou desapegando de algumas coisas. Passe as fotos pelas setas e toque num item para ver os detalhes.`;
-registra('visita', { origem: (document.referrer || '').slice(0, 300) || null, item: location.hash.slice(1) || null });
+if (grupo && CONDOMINIOS[grupo]) document.getElementById('bilhete').textContent = `Olá! Sou vizinho de vocês aqui no ${CONDOMINIOS[grupo]} e estou desapegando de algumas coisas. Para quem é daqui, deixei os preços abaixo dos meus anúncios na internet.`;
+registra('visita', { local_clique: document.documentElement.dataset.tema, origem: (document.referrer || '').slice(0, 300) || null, item: location.hash.slice(1) || null });
 let saiu = false;
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'hidden' && !saiu) { saiu = true; registra('saiu', { segundos: Math.min(86400, Math.round((Date.now() - inicio) / 1000)) }); }
@@ -271,6 +288,13 @@ janela.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') atual.vai(atual.i + 1);
   if (e.key === 'ArrowLeft') atual.vai(atual.i - 1);
 });
+document.getElementById('tema').addEventListener('click', () => {
+  const novo = document.documentElement.dataset.tema === 'noite' ? 'claro' : 'noite';
+  document.documentElement.dataset.tema = novo;
+  try { sessionStorage.setItem('desapegos_tema', novo); } catch (e) {}
+  registra('tema', { local_clique: novo });
+});
+document.getElementById('link-olx').addEventListener('click', () => registra('olx', { local_clique: 'rodape' }));
 if (location.hash && DADOS[location.hash.slice(1)]) abrir(location.hash.slice(1), 'link');
 </script>
 </body>
