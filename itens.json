@@ -6,18 +6,19 @@
     "resumo": "40 mm, preto, com caixa e carregador",
     "descricao": "Samsung Galaxy Watch4 de 40 mm, versão Bluetooth, preto, com a pulseira original.\nMede passos, batimentos, sono e treinos, e mostra as notificações do celular (funciona com Android).\nVai com a caixa e o carregador. Tem marcas leves de uso e está tudo funcionando.",
     "fotos": [
-      "Samsung Galaxy smartwatch4/20261121_032349_700_foto.jpg",
       "Samsung Galaxy smartwatch4/20261121_032349_703_foto.jpg",
+      "Samsung Galaxy smartwatch4/20261121_032349_700_foto.jpg",
       "Samsung Galaxy smartwatch4/20261121_032349_699_foto.jpg",
       "Samsung Galaxy smartwatch4/20261121_032349_702_foto.jpg"
-    ]
+    ],
+    "notion": "41fc543df8fd81e184cef4cafd02fd90"
   },
   {
     "id": "lava-e-seca",
-    "nome": "Lava e seca Samsung 13 kg",
+    "nome": "Lava e seca Samsung Smart 13 kg",
     "preco": "R$ 3.500",
-    "resumo": "Inox, 127 V, comprada em outubro de 2024",
-    "descricao": "Lava e seca Samsung WD13T, 13 kg, 127 V, cor inox.\nComprada em outubro de 2024 e funcionando. Lava e seca no mesmo ciclo, então dispensa a secadora separada.\nVai com o manual e a capa protetora.",
+    "resumo": "Inox, 127 V, controle pelo celular",
+    "descricao": "Lava e seca Samsung WD13T Smart, 13 kg, 127 V, cor inox. Dá para ligar e acompanhar a lavagem pelo celular, no aplicativo SmartThings.\nComprada em outubro de 2024 e funcionando. Lava e seca no mesmo ciclo, então dispensa a secadora separada.\nVai com o manual e a capa protetora.",
     "fotos": [
       "máquina de lavar Samsung/20261117_171900_37_foto.jpg",
       "máquina de lavar Samsung/20261117_171900_38_foto.jpg",
@@ -25,14 +26,15 @@
       "máquina de lavar Samsung/edicao_20261117_224738_412_foto.jpg",
       "máquina de lavar Samsung/edicao_20261117_224738_413_foto.jpg",
       "máquina de lavar Samsung/edicao_20261119_175118_489_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81558f19e8e6637bd6e8"
   },
   {
     "id": "traxxas",
-    "nome": "Carro de controle remoto Traxxas",
+    "nome": "Traxxas Slash 2WD, carro RC de hobby",
     "preco": "R$ 1.700",
-    "resumo": "Elétrico, grande (escala 1/10), completo",
-    "descricao": "Traxxas Slash, carro elétrico de controle remoto de hobby, bem maior e mais rápido que os de brinquedo. Bom para adolescente ou adulto.\nVai completo: controle, baterias e carregador.\nFoi pouquíssimo usado e está funcionando.",
+    "resumo": "Elétrico, escala 1/10, completo com rádio",
+    "descricao": "Traxxas Slash 2WD, carro de controle remoto de hobby (RC) da Traxxas, marca americana referência no segmento. Elétrico, escala 1/10, bem maior e mais rápido que um carrinho de brinquedo.\nVai completo: rádio, baterias e carregador.\nFoi pouquíssimo usado e está funcionando.",
     "fotos": [
       "carrinho controle remoto Traxxas/20261117_193509_169_foto.jpg",
       "carrinho controle remoto Traxxas/20261117_193509_168_foto.jpg",
@@ -40,14 +42,15 @@
       "carrinho controle remoto Traxxas/20261117_200431_180_foto.jpg",
       "carrinho controle remoto Traxxas/20261117_200431_181_foto.jpg",
       "carrinho controle remoto Traxxas/20261117_200431_182_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81f88124df1586b64cba"
   },
   {
     "id": "panela",
     "nome": "Panela elétrica multifuncional Morphy Richards",
     "preco": "R$ 400",
-    "resumo": "Nova, com várias placas, 220 V",
-    "descricao": "Panela elétrica multifuncional Morphy Richards (modelo MR9088), nova e nunca usada; só a caixa foi aberta.\nVem com várias placas que se trocam: chapa lisa, grelha, forma de bolinhos, forma redonda para ovos e panquecas, panela funda e cesto para cozinhar no vapor.\nAtenção: ela é 220 V e o plugue é chinês. Precisa de uma tomada 220 V e de um adaptador de plugue, que custa poucos reais.",
+    "resumo": "Nova, com várias formas e chapas, 220 V",
+    "descricao": "Panela elétrica multifuncional Morphy Richards (modelo MR9088), nova e nunca usada; só a caixa foi aberta.\nVem com várias peças que se trocam: chapa lisa, chapa grelha, forma de bolinhos, forma redonda para ovos e panquecas, panela funda e cesto para cozinhar no vapor.\nAtenção: ela é 220 V e o plugue é chinês. Precisa de uma tomada 220 V e de um adaptador de plugue, que custa poucos reais.",
     "fotos": [
       "panela elétrica morphy richards e acessórios/20261117_201024_229_foto.jpg",
       "panela elétrica morphy richards e acessórios/20261117_201024_227_foto.jpg",
@@ -58,7 +61,8 @@
       "panela elétrica morphy richards e acessórios/20261117_200941_211_foto.jpg",
       "panela elétrica morphy richards e acessórios/20261117_201024_226_foto.jpg",
       "panela elétrica morphy richards e acessórios/20261117_200941_205_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81a2b116f3deb2b3a415"
   },
   {
     "id": "armario",
@@ -73,22 +77,23 @@
       "armário pequeno de metal com 75 gavetinhas/20261117_203208_345_foto.jpg",
       "armário pequeno de metal com 75 gavetinhas/20261117_203208_349_foto.jpg",
       "armário pequeno de metal com 75 gavetinhas/20261117_202928_338_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd815986ebd2f00bb74c83"
   },
   {
     "id": "gaveteiros",
     "nome": "Gaveteiro com rodinhas e assento Bortolini",
     "preco": "R$ 130 cada",
     "resumo": "Tenho 2 iguais, com almofada em cima",
-    "descricao": "Gaveteiro de escritório Bortolini com rodinhas e almofada em cima, que também serve de banquinho. Tem 3 gavetas, a de baixo funda para pastas.\nTenho 2 iguais e vendo separado: R$ 130 cada.\nNão tenho a chave da fechadura. Um deles está com a alça de cima solta (falta um parafuso). As almofadas vão limpas.",
+    "descricao": "Gaveteiro de escritório Bortolini com rodinhas e almofada em cima, que também serve de banquinho. Tem 3 gavetas, a de baixo funda para pastas.\nTenho 2 iguais e vendo separado: R$ 130 cada.\nNão tenho a chave da fechadura.",
     "fotos": [
       "Gaveteiros/20261120_014937_609_foto.jpg",
       "Gaveteiros/20261120_014937_610_foto.jpg",
       "Gaveteiros/20261120_014937_611_foto.jpg",
       "Gaveteiros/20261120_014937_612_foto.jpg",
-      "Gaveteiros/edicao_20261120_015448_646_foto.jpg",
-      "Gaveteiros/20261120_014937_613_foto.jpg"
-    ]
+      "Gaveteiros/edicao_20261120_015448_646_foto.jpg"
+    ],
+    "notion": "41ec543df8fd810d9f2dea59432e244f"
   },
   {
     "id": "giz",
@@ -100,25 +105,27 @@
       "caixa de giz/20261117_202022_281_foto.jpg",
       "caixa de giz/20261117_202022_279_foto.jpg",
       "caixa de giz/20261117_202022_280_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81e9af89ed0a8057b4e3"
   },
   {
     "id": "lumix",
-    "nome": "Câmera digital Panasonic Lumix",
+    "nome": "Câmera digital retrô Panasonic Lumix",
     "preco": "R$ 340",
-    "resumo": "Modelo LZ6, zoom de 6x, funcionando",
-    "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, com zoom óptico de 6x e alça.\nUsa pilhas AA comuns. Está testada e funcionando.\nPara quem gosta de foto com cara de câmera digital dos anos 2000. Não vai cabo.",
+    "resumo": "Digicam dos anos 2000, zoom de 6x",
+    "descricao": "Câmera digital Panasonic Lumix DMC-LZ6, uma digicam dos anos 2000, daquelas que voltaram à moda pelas fotos com cara de época. Zoom óptico de 6x e alça.\nUsa pilhas AA comuns. Está testada e funcionando. Não vai cabo.",
     "fotos": [
       "câmera antiga/20261117_202138_294_foto.jpg",
       "câmera antiga/20261117_202138_295_foto.jpg",
       "câmera antiga/20261117_202138_293_foto.jpg",
       "câmera antiga/20261117_202138_292_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81cda56efb442b9910a5"
   },
   {
     "id": "nobreak",
     "nome": "Nobreak TS Shara 500 VA",
-    "preco": "R$ 220",
+    "preco": "R$ 180",
     "resumo": "Para computador ou roteador, 6 tomadas",
     "descricao": "Nobreak TS Shara UPS Mini 500 VA (115 V), com 6 tomadas. Segura o computador, o roteador ou a TV quando a luz pisca ou cai.\nA bateria não foi testada e ele faz um zumbido baixo desde que foi comprado.",
     "fotos": [
@@ -126,12 +133,13 @@
       "Nobreak/20261119_175518_516_foto.jpg",
       "Nobreak/20261119_175518_515_foto.jpg",
       "Nobreak/20261119_175518_517_foto.jpg"
-    ]
+    ],
+    "notion": "41dc543df8fd81429047c88e81c4c01a"
   },
   {
     "id": "cabo",
     "nome": "Cabo de rede para internet",
-    "preco": "R$ 120",
+    "preco": "R$ 80",
     "resumo": "Caixa de 305 m já aberta, sobra bastante",
     "descricao": "Cabo de rede para levar a internet do roteador até outro cômodo: a TV, o videogame, o computador do escritório ou um ponto de wi-fi no quarto do fundo. Pelo cabo, a conexão fica mais estável que pelo wi-fi.\nA caixa original é de 305 m e já foi aberta; não medi quanto sobrou, mas é bastante cabo.\nVem sem os conectores nas pontas: quem instala coloca na hora.",
     "fotos": [
@@ -139,45 +147,49 @@
       "Cabo internet/20261121_175051_728_foto.jpg",
       "Cabo internet/20261121_175051_727_foto.jpg",
       "Cabo internet/20261121_175051_726_foto.jpg"
-    ]
+    ],
+    "notion": "41fc543df8fd81ff9796ea38e26066a7"
   },
   {
     "id": "zippo-serenity",
     "nome": "Isqueiro Zippo Serenity Prayer",
-    "preco": "R$ 220",
+    "preco": "R$ 180",
     "resumo": "Original, Made in USA, na caixa",
-    "descricao": "Isqueiro Zippo original, feito nos EUA, gravado com a Oração da Serenidade. Vai na caixa.\nEstá vazio, sem fluido.\nLevando junto o Zippo Human Being, sai os dois por R$ 400.",
+    "descricao": "Isqueiro Zippo original, feito nos EUA, gravado com a Oração da Serenidade. Vai na caixa.\nEstá vazio, sem fluido.\nLevando junto o Zippo Human Being, sai os dois por R$ 340.",
     "fotos": [
       "isqueiros Zippo/20261117_202406_311_foto.jpg",
       "isqueiros Zippo/20261117_202406_307_foto.jpg",
       "isqueiros Zippo/20261117_202406_308_foto.jpg",
       "isqueiros Zippo/20261117_202406_309_foto.jpg",
       "isqueiros Zippo/20261117_202406_312_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd8136ace2c1d97d32b95f"
   },
   {
     "id": "zippo-human",
     "nome": "Isqueiro Zippo Human Being",
-    "preco": "R$ 220",
+    "preco": "R$ 180",
     "resumo": "Original, Made in USA, na caixa",
-    "descricao": "Isqueiro Zippo original, feito nos EUA, estampa \"Human Being\" com listras coloridas. Vai na caixa, com o certificado de garantia.\nEstá vazio, sem fluido.\nLevando junto o Zippo Serenity Prayer, sai os dois por R$ 400.",
+    "descricao": "Isqueiro Zippo original, feito nos EUA, estampa \"Human Being\" com listras coloridas. Vai na caixa, com o certificado de garantia.\nEstá vazio, sem fluido.\nLevando junto o Zippo Serenity Prayer, sai os dois por R$ 340.",
     "fotos": [
       "isqueiros Zippo/20261117_202406_315_foto.jpg",
       "isqueiros Zippo/20261117_202406_313_foto.jpg",
       "isqueiros Zippo/20261117_202406_314_foto.jpg",
       "isqueiros Zippo/20261117_202406_316_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81d1aea7f95923bdec88"
   },
   {
     "id": "luva",
     "nome": "Luva de beisebol Rawlings",
-    "preco": "R$ 220",
+    "preco": "R$ 120",
     "resumo": "Tamanho adulto, 13 polegadas",
     "descricao": "Luva de beisebol e softbol Rawlings, modelo RSB130GB, tamanho adulto (13 polegadas).",
     "fotos": [
       "luve de beiseball/20261117_200658_196_foto.jpg",
       "luve de beiseball/20261117_200658_195_foto.jpg"
-    ]
+    ],
+    "notion": "41cc543df8fd81cdae60f212bd53a0df"
   },
   {
     "id": "ssd",
@@ -189,7 +201,8 @@
       "Ssd nvme 128GB/20261119_181236_530_foto.jpg",
       "Ssd nvme 128GB/20261119_181236_528_foto.jpg",
       "Ssd nvme 128GB/20261119_181236_529_foto.jpg"
-    ]
+    ],
+    "notion": "41dc543df8fd81b0afdbecce8d7daa3d"
   },
   {
     "id": "pratos",
@@ -206,6 +219,7 @@
       "Pratos arte indígena/20261120_014520_581_foto.jpg",
       "Pratos arte indígena/20261120_014519_573_foto.jpg",
       "Pratos arte indígena/20261120_014519_575_foto.jpg"
-    ]
+    ],
+    "notion": "41ec543df8fd81cb836aed3526785b49"
   }
 ]

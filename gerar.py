@@ -25,6 +25,13 @@ def reduzir(rel, destino, lado):
 
 
 itens = json.load(open(os.path.join(RAIZ, "itens.json"), encoding="utf-8"))
+# Regra: item vendido no Notion nunca aparece. situacao.json é a leitura do banco
+# Produtos feita logo antes de gerar; sem leitura recente, não gera.
+sit = json.load(open(os.path.join(RAIZ, "situacao.json"), encoding="utf-8"))
+fora = [it["id"] for it in itens if sit["situacao"].get(it["notion"]) in ("Vendido", "Cancelado", "Descartado")]
+if fora:
+    print("fora da página (vendido ou cancelado no Notion):", ", ".join(fora))
+itens = [it for it in itens if it["id"] not in fora]
 pasta = os.path.join(RAIZ, "fotos")
 shutil.rmtree(pasta, ignore_errors=True)
 os.makedirs(pasta)
