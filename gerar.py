@@ -63,9 +63,10 @@ for n, it in enumerate(itens):
         f'<div class="carrossel" data-total="{len(it["arquivos"])}">{carrossel(it, "m")}'
         '<button class="seta ant" aria-label="Foto anterior"></button>'
         '<button class="seta prox" aria-label="Próxima foto"></button>'
-        '<div class="pontos"></div></div>'
+        '<div class="pontos"></div>'
+        '<button class="curtir" aria-pressed="false" aria-label="Curtir este item" title="Curtir"></button></div>'
         f'<div class="texto"><h2>{e(it["nome"])}</h2><p>{e(it["resumo"])}</p>'
-        f'<span class="preco">{e(it["preco"])}</span>'
+        f'<span class="preco">{e(it["preco"])}</span><span class="baixou" hidden></span>'
         '<div class="acoes"><button class="ver">Ver detalhes</button>'
         '<a class="zap" data-local="cartao" target="_blank" rel="noopener">Quero este</a></div></div></article>'
     )

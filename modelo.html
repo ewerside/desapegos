@@ -127,6 +127,22 @@
   dialog .zap { margin-top: 18px; font-size: 16px; padding: 11px 20px 11px 16px; }
 
   @media (prefers-reduced-motion: reduce) { .trilho { transition: none; } }
+
+  .curtir { position: absolute; top: 8px; right: 8px; z-index: 1; width: 40px; height: 40px; border: none; border-radius: 50%; background: rgba(255, 254, 248, .93); cursor: pointer; box-shadow: 0 1px 3px rgba(34, 50, 77, .35); display: grid; place-items: center; padding: 0; }
+  .curtir::before { content: ""; width: 21px; height: 21px; background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%2322324d' stroke-width='2.2' stroke-linejoin='round' d='M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z'/%3E%3C/svg%3E"); }
+  .curtir[aria-pressed="true"]::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e0475b' stroke='%23e0475b' stroke-width='2.2' stroke-linejoin='round' d='M12 20.5s-7.5-4.6-9.3-9.4C1.4 7.6 3.6 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.6 0 5.8 3.6 4.5 7.1-1.8 4.8-9.3 9.4-9.3 9.4z'/%3E%3C/svg%3E"); }
+  .curtir.pulou::before { animation: pulo .35s ease; }
+  @keyframes pulo { 50% { transform: scale(1.3); } }
+  .baixou { display: inline-block; margin-top: 8px; background: #fde8c8; color: #7a4a06; font-weight: 600; font-size: 13.5px; padding: 3px 9px; border-radius: 6px; }
+  .baixou[hidden] { display: none; }
+  .filtro { max-width: 1080px; margin: 0 auto; padding: 18px 16px 0; }
+  .filtro[hidden] { display: none; }
+  .filtro button { border: 1.5px solid var(--titulo); color: var(--titulo); background: none; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .filtro button[aria-pressed="true"] { background: var(--papel); color: var(--tinta); border-color: var(--papel); }
+  .nota[hidden] { display: none; }
+  .j-linha { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  dialog .curtir { position: static; margin-top: 12px; flex: none; }
+  @media (prefers-reduced-motion: reduce) { .curtir.pulou::before { animation: none; } }
 </style>
 </head>
 <body>
@@ -155,6 +171,8 @@
   <a class="zap" data-local="topo" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
 </header>
 
+<div class="filtro" id="filtro" hidden><button id="so-favoritos" aria-pressed="false"></button></div>
+
 <main>
 {{CARDS}}
 </main>
@@ -170,7 +188,7 @@
   <div class="janela-corpo">
     <div class="carrossel" id="j-carrossel"></div>
     <div class="contador" id="j-contador" aria-live="polite"></div>
-    <h2 id="j-nome"></h2>
+    <div class="j-linha"><h2 id="j-nome"></h2><button class="curtir" id="j-curtir" aria-pressed="false" aria-label="Curtir este item" title="Curtir"></button></div>
     <span class="preco" id="j-preco"></span>
     <p class="descricao" id="j-desc"></p>
     <a class="zap" id="j-zap" data-local="janela" target="_blank" rel="noopener">Quero este, chamar no WhatsApp</a>
@@ -265,6 +283,8 @@ function abrir(id, como) {
   document.getElementById('j-desc').textContent = d.descricao;
   const zap = document.getElementById('j-zap');
   zap.href = linkZap(id); zap.dataset.item = id;
+  janela.dataset.item = id;
+  const jc = document.getElementById('j-curtir'); jc.setAttribute('aria-pressed', !!curtidos[id]);
   atual = carrossel(novo, id, 'janela', (i, t) => { document.getElementById('j-contador').textContent = t > 1 ? `Foto ${i + 1} de ${t}` : ''; });
   janela.showModal();
   registra('abriu_item', { item: id, local_clique: como });
@@ -298,6 +318,74 @@ document.getElementById('tema').addEventListener('click', () => {
   registra('tema', { local_clique: novo });
 });
 document.getElementById('link-olx').addEventListener('click', () => registra('olx', { local_clique: 'rodape' }));
+
+/* Curtidas: ficam no navegador da pessoa (lista de favoritos) e vão para as estatísticas.
+   Guarda o preço do momento da curtida para avisar quando baixar. Sem contagem pública. */
+const valor = p => Number(String(p).replace(/\D/g, '')) || null;
+let curtidos = {};
+try { curtidos = JSON.parse(localStorage.getItem('desapegos_curtidos') || '{}') || {}; } catch (e) {}
+function salvaCurtidos() { try { localStorage.setItem('desapegos_curtidos', JSON.stringify(curtidos)); } catch (e) {} }
+Object.keys(curtidos).forEach(id => { if (!DADOS[id]) delete curtidos[id]; });
+salvaCurtidos();
+function pintaCurtida(id) {
+  const sim = !!curtidos[id];
+  document.querySelectorAll(`.nota[data-id="${CSS.escape(id)}"] .curtir` + (janela.open && janela.dataset.item === id ? ', #j-curtir' : '')).forEach(b => {
+    b.setAttribute('aria-pressed', sim); b.setAttribute('aria-label', sim ? 'Tirar dos favoritos' : 'Curtir este item');
+  });
+  const nota = document.querySelector(`.nota[data-id="${CSS.escape(id)}"]`);
+  const aviso = nota && nota.querySelector('.baixou');
+  if (aviso) {
+    const antes = sim && curtidos[id].preco, agora = valor(DADOS[id].preco);
+    if (antes && agora && agora < antes) { aviso.textContent = `Baixou! Era R$ ${antes.toLocaleString('pt-BR')}`; aviso.hidden = false; } else aviso.hidden = true;
+  }
+}
+function alternaCurtida(id, botao, onde) {
+  if (curtidos[id]) { delete curtidos[id]; registra('descurtiu', { item: id, local_clique: onde }); }
+  else { curtidos[id] = { preco: valor(DADOS[id].preco), em: new Date().toISOString().slice(0, 10) }; registra('curtiu', { item: id, local_clique: onde }); }
+  salvaCurtidos();
+  botao.classList.remove('pulou'); void botao.offsetWidth; botao.classList.add('pulou');
+  pintaCurtida(id); atualizaFiltro();
+}
+const filtro = document.getElementById('filtro'), soFav = document.getElementById('so-favoritos');
+let filtrando = false;
+function atualizaFiltro() {
+  const n = Object.keys(curtidos).length;
+  if (!n) filtrando = false;
+  filtro.hidden = n === 0;
+  soFav.textContent = filtrando ? 'Mostrar tudo' : `♥ Meus favoritos (${n})`;
+  soFav.setAttribute('aria-pressed', filtrando);
+  document.querySelectorAll('.nota').forEach(nota => { nota.hidden = filtrando && !curtidos[nota.dataset.id]; });
+}
+soFav.addEventListener('click', () => { filtrando = !filtrando; atualizaFiltro(); registra('favoritos', { local_clique: filtrando ? 'ligou' : 'desligou' }); });
+
+/* Item visto: cartão pelo menos 60% na tela por 1 segundo, uma vez por sessão.
+   Serve de denominador (curtidas e contatos por visualização), por causa do viés da ordem. */
+let vistos = {};
+try { vistos = JSON.parse(sessionStorage.getItem('desapegos_vistos') || '{}') || {}; } catch (e) {}
+if ('IntersectionObserver' in window) {
+  const timers = {};
+  const obs = new IntersectionObserver(entradas => entradas.forEach(en => {
+    const id = en.target.dataset.id;
+    if (en.isIntersecting) {
+      if (!vistos[id] && !timers[id]) timers[id] = setTimeout(() => {
+        vistos[id] = 1; try { sessionStorage.setItem('desapegos_vistos', JSON.stringify(vistos)); } catch (e) {}
+        const pos = [...document.querySelectorAll('.nota')].indexOf(en.target) + 1;
+        registra('viu_item', { item: id, local_clique: 'pos' + pos }); obs.unobserve(en.target);
+      }, 1000);
+    } else { clearTimeout(timers[id]); delete timers[id]; }
+  }), { threshold: 0.6 });
+  document.querySelectorAll('.nota').forEach(n => { if (!vistos[n.dataset.id]) obs.observe(n); });
+}
+
+document.querySelectorAll('.nota').forEach(nota => {
+  const id = nota.dataset.id, b = nota.querySelector('.curtir');
+  ['pointerdown', 'pointerup'].forEach(t => b.addEventListener(t, e => e.stopPropagation()));
+  b.addEventListener('click', e => { e.stopPropagation(); alternaCurtida(id, b, 'cartao'); });
+  pintaCurtida(id);
+});
+const jCurtir = document.getElementById('j-curtir');
+jCurtir.addEventListener('click', () => { const id = janela.dataset.item; if (id) alternaCurtida(id, jCurtir, 'janela'); });
+atualizaFiltro();
 if (location.hash && DADOS[location.hash.slice(1)]) abrir(location.hash.slice(1), 'link');
 </script>
 </body>
